@@ -21,6 +21,7 @@ namespace HospitalManagement.Web.Controllers
         }
         //..........................................................................
 
+
             public ActionResult Check()
         {
             if (User.Identity.IsAuthenticated)
