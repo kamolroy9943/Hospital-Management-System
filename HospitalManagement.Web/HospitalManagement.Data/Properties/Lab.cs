@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HospitalManagement.Data
+{
+   public class Lab
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+
+        public IList<Building>Building { get; set; }
+
+        public IList<Floor>Floor { get; set; }
+       
+    }
+}

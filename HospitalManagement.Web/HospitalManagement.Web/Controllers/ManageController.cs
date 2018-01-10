@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HospitalManagement.Web.Models;
+using HospitalManagement.Controllers;
 
 namespace HospitalManagement.Web.Controllers
 {
