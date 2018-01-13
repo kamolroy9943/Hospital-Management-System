@@ -22,15 +22,32 @@ namespace HospitalManagement.Web.Controllers
         // Building DashBoard
         public ActionResult Dashboard()
         {
-
-            return View();
+            var model = _context.Building.ToList();
+            return View(model);
         }
 
         // GET: Building/Details/5
         public ActionResult Details(int id)
         {
+            var floor = _context.Floors.ToList();
+            int count = floor.Count(x => x.BuildingId == id);
+            ViewBag.Floors = count;
+
             Building B = _context.Building.Find(id);
             return View(B);
+        }
+
+
+        public ActionResult BuildingToAddFloor(int id)
+        {
+
+            return RedirectToAction("Create", "Floor", new { id = id });
+        }
+
+        public ActionResult BuildingToFloorDash(int id)
+        {
+
+            return RedirectToAction("Dashboard", "Floor", new { id = id });
         }
 
         // GET: Building/Create

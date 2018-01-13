@@ -11,5 +11,7 @@ namespace HospitalManagement.Web.Models
     {
 
         public DbSet<Building> Building { get; set; }
+
+        public System.Data.Entity.DbSet<HospitalManagement.Data.Floor> Floors { get; set; }
     }
 }

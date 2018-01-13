@@ -208,6 +208,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BuildingController.cs" />
+    <Compile Include="Controllers\FloorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LabAdminController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -289,6 +290,10 @@
     <Content Include="Views\Building\Edit.cshtml" />
     <Content Include="Views\Building\Delete.cshtml" />
     <Content Include="Views\Building\Details.cshtml" />
+    <Content Include="Views\Building\Dashboard.cshtml" />
+    <Content Include="Views\Floor\Create.cshtml" />
+    <Content Include="Views\Floor\Dashboard.cshtml" />
+    <Content Include="Views\Floor\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
