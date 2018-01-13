@@ -16,9 +16,6 @@ namespace HospitalManagement.Data
         [Required]
         public string BuildingName { get; set; }
 
-        [Required]
-        public int NumberOfFlorrs {get;set;}
-
         public DateTime Updated { get; set; }
 
         public string UpdatedBy { get; set; }       
@@ -27,7 +24,7 @@ namespace HospitalManagement.Data
 
         public  ICollection<Floor> Floors { get; set; }
 
-        public ICollection<Department> Departments { get; set; }
+      //  public ICollection<Department> Departments { get; set; }
 
         //public ICollection<Ward> Wards { get; set; }
 
