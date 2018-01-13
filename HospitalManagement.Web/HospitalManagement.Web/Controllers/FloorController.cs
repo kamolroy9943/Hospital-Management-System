@@ -1,0 +1,144 @@
+﻿using HospitalManagement.Web.Models;
+using HospitalManagement.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace HospitalManagement.Web.Controllers
+{
+    public class FloorController : Controller
+    {
+        HospitalManagementContext _context = new HospitalManagementContext();
+
+        // GET: Floor
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Dashboard(int id)
+        {
+            var building = _context.Building.ToList();
+            string BuildingName = building.FirstOrDefault(x => x.Id == id).BuildingName;
+            ViewBag.Building = BuildingName;
+
+            var floor = _context.Floors.Where(x => x.BuildingId == id).ToList();
+
+            return View(floor);
+        }
+
+
+        // GET: Floor/Details/5
+        public ActionResult Details(int id)
+        {
+            Floor floor = _context.Floors.Find(id);
+
+            var fmodel = _context.Floors.Where(x => x.Id == id);
+            var bmodel = _context.Building.ToList();
+
+            int B_id = fmodel.FirstOrDefault(x => x.Id == id).BuildingId;
+            string building = bmodel.FirstOrDefault(x => x.Id == B_id).BuildingName;
+            ViewBag.BuildingName = building;
+
+            return View(floor);
+        }
+
+        // GET: Floor/Create
+        public ActionResult Create(int id)
+        {
+            var floor = _context.Floors.ToList();
+            int count = floor.Count(x => x.BuildingId == id);
+            ViewBag.Floors = count;
+
+            var building = _context.Building.ToList();
+            string BuildingName = building.FirstOrDefault(x => x.Id == id).BuildingName;
+            ViewBag.Building = BuildingName;
+            ViewBag.BuildingId = id;
+
+            return View();
+        }
+
+        // POST: Floor/Create
+        [HttpPost]
+        public ActionResult Create(Floor collection,int id)
+        {
+            try
+            {
+                var floor = _context.Floors.ToList();
+                int count = floor.Count(x => x.BuildingId == id);
+                
+                int a = collection.FloorNumber; 
+                int b = count + a;
+
+               
+                for(int i=count+1;i<=b;i++)
+                {
+                    collection.BuildingId = id;
+                    collection.FloorNumber = i;
+                    _context.Floors.Add(collection);
+                    _context.SaveChanges();
+                }
+                //..............................
+                Building building = _context.Building.Find(id);
+                building.Updated = DateTime.Now;
+                building.UpdatedBy = Environment.UserName;
+                _context.Entry(building).State = System.Data.Entity.EntityState.Modified;
+                _context.SaveChanges();
+
+
+
+                return RedirectToAction("Details","Building",new {id=id });
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Floor/Edit/5
+        public ActionResult Edit(int id)
+        {
+            return View();
+        }
+
+        // POST: Floor/Edit/5
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add update logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Floor/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
+
+        // POST: Floor/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add delete logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+    }
+}
