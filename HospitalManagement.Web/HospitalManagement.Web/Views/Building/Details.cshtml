@@ -17,6 +17,7 @@
         <dd>
             @Html.DisplayFor(model => model.BuildingName)
         </dd>
+
         <dt>
             @Html.ActionLink("Floors", "BuildingToFloorDash", new {id=Model.Id }) :
         </dt>
@@ -24,6 +25,15 @@
         <dd>
             @ViewBag.Floors  &nbsp;  @Html.ActionLink("Add Floor", "BuildingToAddFloor",new {id=Model.Id })
         </dd>
+
+        <dt>
+            @Html.ActionLink("Departments", "BuildingToDepartmentList", new { id = Model.Id }) :
+        </dt>
+
+        <dd>
+            @ViewBag.Departments  &nbsp;  @Html.ActionLink("Add Department", "BuildingToAddDepartment", new { id = Model.Id })
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Updated)
         </dt>

@@ -22,11 +22,13 @@ namespace HospitalManagement.Data
 
         // Navigation Relation
 
-        public  ICollection<Floor> Floors { get; set; }
+        public  virtual ICollection<Floor> Floors { get; set; }
 
-      //  public ICollection<Department> Departments { get; set; }
+        public virtual ICollection<Department> Departments { get; set; }
 
-        //public ICollection<Ward> Wards { get; set; }
+        public  virtual ICollection<Room>Rooms { get; set; }
+
+        public ICollection<Ward> Wards { get; set; }
 
         //public ICollection<Lab> Labs { get; set; }
 

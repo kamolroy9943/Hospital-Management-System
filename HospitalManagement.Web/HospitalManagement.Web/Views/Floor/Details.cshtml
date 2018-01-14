@@ -26,6 +26,14 @@
             @Html.DisplayFor(model => model.FloorNumber)
         </dd>
 
+        <dt>
+            @Html.ActionLink("Departments", "FloorToDepartmentList", new { id = Model.Id }) :
+        </dt>
+
+        <dd>
+            @ViewBag.Departments &nbsp;  @Html.ActionLink("Add Department", "FloorToAddDepartment", new { id = Model.Id })
+        </dd>
+
     </dl>
 </div>
 <p>

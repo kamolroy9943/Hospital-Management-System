@@ -29,6 +29,18 @@ namespace HospitalManagement.Web.Controllers
             return View(floor);
         }
 
+        public ActionResult FloorToDepartmentList(int id)
+        {
+
+            return RedirectToAction("FromFloorDash", "Department", new { id = id });
+        }
+
+        public ActionResult FloorToAddDepartment(int id)
+        {
+
+            return RedirectToAction("FromFloorCreate", "Department", new { id = id });
+        }
+
 
         // GET: Floor/Details/5
         public ActionResult Details(int id)
@@ -41,6 +53,9 @@ namespace HospitalManagement.Web.Controllers
             int B_id = fmodel.FirstOrDefault(x => x.Id == id).BuildingId;
             string building = bmodel.FirstOrDefault(x => x.Id == B_id).BuildingName;
             ViewBag.BuildingName = building;
+
+            int Departments = _context.Departments.Count(x => x.FloorId == id);
+            ViewBag.Departments = Departments;
 
             return View(floor);
         }
@@ -83,7 +98,7 @@ namespace HospitalManagement.Web.Controllers
                 //..............................
                 Building building = _context.Building.Find(id);
                 building.Updated = DateTime.Now;
-                building.UpdatedBy = Environment.UserName;
+                building.UpdatedBy = User.Identity.Name;
                 _context.Entry(building).State = System.Data.Entity.EntityState.Modified;
                 _context.SaveChanges();
 

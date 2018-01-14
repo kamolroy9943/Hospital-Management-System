@@ -16,13 +16,13 @@ namespace HospitalManagement.Data
 
         public int BuildingId { get; set; }
 
-        public Building Building { set; get; }
+        public virtual Building Building { set; get; }
         
-       // public ICollection<Department>Departments { get; set; }
+        public virtual ICollection<Department>Departments { get; set; }
 
-        //public ICollection<Room>Rooms { get; set; }
+        public  virtual ICollection<Room>Rooms { get; set; }
 
-        //public ICollection<Ward>Wards { get; set; }
+        public ICollection<Ward>Wards { get; set; }
 
         //public ICollection<Lab> Labs { get; set; }
 

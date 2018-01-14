@@ -15,9 +15,19 @@ namespace HospitalManagement.Data
         [Required]
         public string RoomNumber { get; set; }
 
-        public IList<Floor>Floor { get; set; }
+        public int BuildingId { get; set; }
+        public string BuildingName {get;set;}
+        public Building Building { get; set; }
 
-        public ICollection<Seat> Seats { get; set; }
+        public int FloorId { get; set; }
+        public int FloorNumber { get; set; }
+        public Floor Floor { get; set; }
+
+        public DateTime Updated { get; set; }
+        public string UpdatedBy { get; set; }
+
+        //public IList<Floor>Floor { get; set; }
+        //public ICollection<Seat> Seats { get; set; }
        
     }
 }

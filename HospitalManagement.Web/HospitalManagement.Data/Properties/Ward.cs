@@ -17,12 +17,15 @@ namespace HospitalManagement.Data
 
         public int BuildingId { get; set; }
         public string BuildingName { get; set; }
+        public Building Building { get; set; }
 
         public int FloorId { get; set; }
         public string FloorName { get; set; }
+        public Floor Floor { get; set; }
 
         public int DepartmentId { get; set; }
         public string DepartmentName { get; set; }
+        public Department Department { get; set; }
 
         public DateTime Update { get; set; }
         public string Updatedby { get; set; }

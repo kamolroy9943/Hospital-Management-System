@@ -30,8 +30,12 @@ namespace HospitalManagement.Web.Controllers
         public ActionResult Details(int id)
         {
             var floor = _context.Floors.ToList();
-            int count = floor.Count(x => x.BuildingId == id);
-            ViewBag.Floors = count;
+            int countfloor = floor.Count(x => x.BuildingId == id);
+            ViewBag.Floors = countfloor;
+
+            var dept = _context.Departments.ToList();
+            int countdept = dept.Count(x => x.BuildingId == id);
+            ViewBag.Departments = countdept;
 
             Building B = _context.Building.Find(id);
             return View(B);
@@ -50,6 +54,18 @@ namespace HospitalManagement.Web.Controllers
             return RedirectToAction("Dashboard", "Floor", new { id = id });
         }
 
+        public ActionResult BuildingToDepartmentList(int id)
+        {
+
+            return RedirectToAction("List", "Department", new { id = id });
+        }
+
+        public ActionResult BuildingToAddDepartment(int id)
+        {
+
+            return RedirectToAction("Create", "Department", new { id = id });
+        }
+
         // GET: Building/Create
         public ActionResult Create()
         {
@@ -64,7 +80,7 @@ namespace HospitalManagement.Web.Controllers
             try
             {
                 collection.Updated = DateTime.Now;
-                collection.UpdatedBy = Environment.UserName;
+                collection.UpdatedBy = User.Identity.Name;
 
                 _context.Building.Add(collection);
                 _context.SaveChanges();
@@ -91,7 +107,7 @@ namespace HospitalManagement.Web.Controllers
             try
             {
                 collection.Updated = DateTime.Now;
-                collection.UpdatedBy = Environment.UserName;
+                collection.UpdatedBy = User.Identity.Name;
 
                 _context.Entry(collection).State = System.Data.Entity.EntityState.Modified;
                 _context.SaveChanges();
