@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Details of @Model.FloorNumber th floor of @ViewBag.BuildingName Building</h2>
 
 <div>
     <h4>Floor</h4>
@@ -27,6 +27,15 @@
         </dd>
 
         <dt>
+            @Html.ActionLink("Rooms", "FloorToRoomList", new { id = Model.Id }) :
+        </dt>
+
+        <dd>
+            @ViewBag.Rooms &nbsp;  @Html.ActionLink("Add Rooms", "FloorToAddRoom", new { id = Model.Id })
+        </dd>
+
+
+        <dt>
             @Html.ActionLink("Departments", "FloorToDepartmentList", new { id = Model.Id }) :
         </dt>
 
@@ -37,6 +46,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    
+    @Html.ActionLink("Back to DashBoard", "Dashboard",new {id=ViewBag.BuildingId })
 </p>

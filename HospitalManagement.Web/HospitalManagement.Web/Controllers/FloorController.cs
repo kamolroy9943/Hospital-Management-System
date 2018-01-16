@@ -41,6 +41,16 @@ namespace HospitalManagement.Web.Controllers
             return RedirectToAction("FromFloorCreate", "Department", new { id = id });
         }
 
+        public ActionResult FloorToRoomList(int id)
+        {
+            return RedirectToAction("DashBoard", "Room", new { id = id });
+        }
+
+        public ActionResult FloorToAddRoom(int id)
+        {
+
+            return RedirectToAction("Create", "Room", new { id = id });
+        }
 
         // GET: Floor/Details/5
         public ActionResult Details(int id)
@@ -53,9 +63,13 @@ namespace HospitalManagement.Web.Controllers
             int B_id = fmodel.FirstOrDefault(x => x.Id == id).BuildingId;
             string building = bmodel.FirstOrDefault(x => x.Id == B_id).BuildingName;
             ViewBag.BuildingName = building;
+            ViewBag.BuildingId = B_id;
 
             int Departments = _context.Departments.Count(x => x.FloorId == id);
             ViewBag.Departments = Departments;
+
+            int Rooms = _context.Rooms.Count(x => x.FloorId == id);
+            ViewBag.Rooms = Rooms;
 
             return View(floor);
         }

@@ -20,7 +20,7 @@ namespace HospitalManagement.Web.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Building>().HasMany(x=>x.Departments).WithRequired(f => f.Building).WillCascadeOnDelete(false);
-            modelBuilder.Entity<Building>().HasMany(x => x.Rooms).WithRequired(f => f.Building).WillCascadeOnDelete(false);
+           
             modelBuilder.Entity<Building>().HasMany(x => x.Wards).WithRequired(f => f.Building).WillCascadeOnDelete(false);
             modelBuilder.Entity<Floor>().HasMany(x => x.Wards).WithRequired(f => f.Floor).WillCascadeOnDelete(false);
             modelBuilder.Entity<Floor>().HasMany(x => x.Rooms).WithRequired(f => f.Floor).WillCascadeOnDelete(false);

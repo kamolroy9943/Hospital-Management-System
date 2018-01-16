@@ -14,10 +14,18 @@ namespace HospitalManagement.Data
 
         [Required]
         public string Name { get; set; }
+        public string Description { get; set; }
 
-        public IList<Building>Building { get; set; }
+        public int RoomId { get; set; }
+        public int RoomNumber { get; set; }
+        public Room Room { get; set; }
 
-        public IList<Floor>Floor { get; set; }
+        public DateTime Updated { get; set; }
+        public string UpdatedBy { get; set; }
+
+        //public IList<Building>Building { get; set; }
+
+        //public IList<Floor>Floor { get; set; }
        
     }
 }
