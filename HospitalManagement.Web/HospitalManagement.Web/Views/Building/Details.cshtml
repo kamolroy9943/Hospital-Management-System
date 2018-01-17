@@ -42,6 +42,14 @@
             @ViewBag.Wards &nbsp;  @Html.ActionLink("Add Wards", "BuildingToAddWard", new { id = Model.Id })
         </dd>
 
+        <dt>
+            @Html.ActionLink("Ticket Counters", "BuildingToCounterList", new { id = Model.Id }) :
+        </dt>
+
+        <dd>
+            @ViewBag.TicketCounter &nbsp;  @Html.ActionLink("Add Ticket Counter", "BuildingToAddCounter", new { id = Model.Id })
+        </dd>
+
 
         <dt>
             @Html.DisplayNameFor(model => model.Updated)

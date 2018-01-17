@@ -16,6 +16,12 @@ namespace HospitalManagement.Data
         public string Name { get; set; }
         public string Description { get; set; }
 
+        public int BuildingId { get; set; }
+        public Building Building { get; set; }
+
+        public int FloorId { get; set; }
+        public Floor Floor { get; set; }
+
         public int RoomId { get; set; }
         public int RoomNumber { get; set; }
         public Room Room { get; set; }

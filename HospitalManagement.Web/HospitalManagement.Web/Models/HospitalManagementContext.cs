@@ -16,14 +16,18 @@ namespace HospitalManagement.Web.Models
         public DbSet<Department> Departments { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Ward> Wards { get; set; }
+        public DbSet<Lab> Labs { get; set; }
+        public DbSet<Ticket_Counter>TicketCounter { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Building>().HasMany(x=>x.Departments).WithRequired(f => f.Building).WillCascadeOnDelete(false);
-           
+            modelBuilder.Entity<Building>().HasMany(x => x.Ticket_Counter).WithRequired(f => f.Building).WillCascadeOnDelete(false);
+            modelBuilder.Entity<Building>().HasMany(x => x.Labs).WithRequired(f => f.Building).WillCascadeOnDelete(false);
             modelBuilder.Entity<Building>().HasMany(x => x.Wards).WithRequired(f => f.Building).WillCascadeOnDelete(false);
             modelBuilder.Entity<Floor>().HasMany(x => x.Wards).WithRequired(f => f.Floor).WillCascadeOnDelete(false);
             modelBuilder.Entity<Floor>().HasMany(x => x.Rooms).WithRequired(f => f.Floor).WillCascadeOnDelete(false);
+            modelBuilder.Entity<Floor>().HasMany(x => x.Labs).WithRequired(f => f.Floor).WillCascadeOnDelete(false);
             base.OnModelCreating(modelBuilder);
 
         }

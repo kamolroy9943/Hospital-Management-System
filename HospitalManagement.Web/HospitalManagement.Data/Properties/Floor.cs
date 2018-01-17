@@ -24,7 +24,7 @@ namespace HospitalManagement.Data
 
         public ICollection<Ward>Wards { get; set; }
 
-        //public ICollection<Lab> Labs { get; set; }
+        public ICollection<Lab> Labs { get; set; }
 
         //public ICollection<Patient> Patients { get; set; }
     }

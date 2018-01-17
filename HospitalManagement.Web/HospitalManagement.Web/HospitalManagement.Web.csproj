@@ -215,6 +215,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\SuperAdminController.cs" />
+    <Compile Include="Controllers\TicketCounterController.cs" />
     <Compile Include="Controllers\usersController.cs" />
     <Compile Include="Controllers\WardController.cs" />
     <Compile Include="Global.asax.cs">
@@ -319,6 +320,13 @@
     <Content Include="Views\Ward\Delete.cshtml" />
     <Content Include="Views\Ward\Details.cshtml" />
     <Content Include="Views\Ward\Edit.cshtml" />
+    <Content Include="Views\TicketCounter\Index.cshtml" />
+    <Content Include="Views\TicketCounter\Create.cshtml" />
+    <Content Include="Views\TicketCounter\Details.cshtml" />
+    <Content Include="Views\TicketCounter\Edit.cshtml" />
+    <Content Include="Views\TicketCounter\Delete.cshtml" />
+    <Content Include="Views\TicketCounter\FromBuildingDash.cshtml" />
+    <Content Include="Views\TicketCounter\FromBuildingCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
