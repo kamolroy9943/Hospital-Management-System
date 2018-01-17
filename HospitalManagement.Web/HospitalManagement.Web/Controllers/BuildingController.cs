@@ -37,6 +37,9 @@ namespace HospitalManagement.Web.Controllers
             int countdept = dept.Count(x => x.BuildingId == id);
             ViewBag.Departments = countdept;
 
+            int countward = _context.Wards.Count(x => x.BuildingId == id);
+            ViewBag.Wards = countward;
+
             Building B = _context.Building.Find(id);
             return View(B);
         }
@@ -66,6 +69,16 @@ namespace HospitalManagement.Web.Controllers
             return RedirectToAction("Create", "Department", new { id = id });
         }
 
+        public ActionResult BuildingToWardList(int id)
+        {
+            return RedirectToAction("FromBuildingDash", "Ward", new { id = id });
+        }
+
+        public ActionResult BuildingToAddWard(int id)
+        {
+            return RedirectToAction("FromBuildingCreate", "Ward", new { id = id });
+        }
+
         // GET: Building/Create
         public ActionResult Create()
         {
@@ -84,6 +97,8 @@ namespace HospitalManagement.Web.Controllers
 
                 _context.Building.Add(collection);
                 _context.SaveChanges();
+
+               
 
                 return RedirectToAction("Index");
             }

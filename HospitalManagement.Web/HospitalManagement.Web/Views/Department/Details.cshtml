@@ -37,6 +37,16 @@
         </dd>
 
         <dt>
+            @Html.ActionLink("Wards", "DepartmentToWardList", new { id = Model.Id }) :
+        </dt>
+
+        <dd>
+            @ViewBag.Wards &nbsp;  @Html.ActionLink("Add Wards", "DepartmentToAddWard", new { id = Model.Id })
+        </dd>
+
+
+
+        <dt>
             @Html.DisplayNameFor(model => model.Updated)
         </dt>
 

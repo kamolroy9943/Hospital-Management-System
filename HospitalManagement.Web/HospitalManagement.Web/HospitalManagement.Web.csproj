@@ -216,6 +216,7 @@
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\SuperAdminController.cs" />
     <Compile Include="Controllers\usersController.cs" />
+    <Compile Include="Controllers\WardController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -309,6 +310,15 @@
     <Content Include="Views\Room\Create.cshtml" />
     <Content Include="Views\Room\Edit.cshtml" />
     <Content Include="Views\Room\Details.cshtml" />
+    <Content Include="Views\Ward\FromDepartmentDash.cshtml" />
+    <Content Include="Views\Ward\FromFloorDash.cshtml" />
+    <Content Include="Views\Ward\FromBuildingDash.cshtml" />
+    <Content Include="Views\Ward\FromDepartmentCreate.cshtml" />
+    <Content Include="Views\Ward\FromFloorCreate.cshtml" />
+    <Content Include="Views\Ward\FromBuildingCreate.cshtml" />
+    <Content Include="Views\Ward\Delete.cshtml" />
+    <Content Include="Views\Ward\Details.cshtml" />
+    <Content Include="Views\Ward\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

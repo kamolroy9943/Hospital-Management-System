@@ -43,6 +43,16 @@
             @ViewBag.Departments &nbsp;  @Html.ActionLink("Add Department", "FloorToAddDepartment", new { id = Model.Id })
         </dd>
 
+
+        <dt>
+            @Html.ActionLink("Wards", "FloorToWardList", new { id = Model.Id }) :
+        </dt>
+
+        <dd>
+            @ViewBag.Wards &nbsp; 
+             @Html.ActionLink("Add Wards", "FloorToAddWard", new { id = Model.Id })
+        </dd>
+
     </dl>
 </div>
 <p>

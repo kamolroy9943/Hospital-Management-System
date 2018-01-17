@@ -36,11 +36,25 @@ namespace HospitalManagement.Web.Controllers
             return View(department);
         }
 
+        public ActionResult DepartmentToWardList(int id)
+        {
+            return RedirectToAction("FromDepartmentDash", "Ward", new { id = id });
+        }
+
+        public ActionResult DepartmentToAddWard(int id)
+        {
+            return RedirectToAction("FromDepartmentCreate", "Ward", new { id = id });
+        }
+
 
         // GET: Department/Details/5
         public ActionResult Details(int id)
         {
             Department Dept = _context.Departments.Find(id);
+
+            int Wards = _context.Wards.Count(x => x.DepartmentId == id);
+            ViewBag.Wards = Wards;
+
             return View(Dept);
         }
 
