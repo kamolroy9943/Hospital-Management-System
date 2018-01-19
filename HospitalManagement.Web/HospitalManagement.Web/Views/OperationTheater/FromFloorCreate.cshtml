@@ -1,0 +1,45 @@
+﻿@model HospitalManagement.Data.OperationTheater
+
+@{
+    ViewBag.Title = "FromFloorCreate";
+}
+
+<h2>FromFloorCreate</h2>
+
+@using (Html.BeginForm("FromFloorCreate","OperationTheater",new {FloorID=ViewBag.FloorId,NextOt= ViewBag.NextOt }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>OperationTheater</h4>
+        <hr />
+             <div class="form-group">
+                 @{ 
+                     if(ViewBag.CurrentOts==0)
+                     {
+                         string ok = "There are no Ots in this floor  ";
+                         string next = "Next Operation Theater will be " + ViewBag.NextOt ;
+                         @Html.Label(ok +next);
+                     }
+                     else
+                     {
+                         string ok = "There are "+ViewBag.CurrentOts+ "Ots in this floor  ";
+                         string next = "Next Operation Theater will be " + ViewBag.NextOt;
+                        @Html.Label(ok + next);
+                     }
+                }
+             </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("OTs of this Floor", "FromFloorDash",new { id=@ViewBag.FloorId}) ||||||
+    @Html.ActionLink("OTs of this Building", "FromBuildingDash", new { id = @ViewBag.BuildingId })
+    
+</div>

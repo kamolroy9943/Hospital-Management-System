@@ -33,7 +33,13 @@
         <dd>
             @ViewBag.Rooms &nbsp;  @Html.ActionLink("Add Rooms", "FloorToAddRoom", new { id = Model.Id })
         </dd>
+        <dt>
+            @Html.ActionLink("Operation Theaters", "FloorToOperationTheaterDash", new { id = Model.Id }) :
+        </dt>
 
+        <dd>
+            @ViewBag.OTs  &nbsp;  @Html.ActionLink("Add Operation Theater", "FloorToAddOperationTheater", new { id = Model.Id })
+        </dd>
 
         <dt>
             @Html.ActionLink("Departments", "FloorToDepartmentList", new { id = Model.Id }) :

@@ -62,6 +62,17 @@ namespace HospitalManagement.Web.Controllers
             return RedirectToAction("FromFloorCreate", "Ward", new { id = id });
         }
 
+        public ActionResult FloorToOperationTheaterDash(int id)
+        {
+            return RedirectToAction("FromFloorDash", "OperationTheater", new { id = id });
+        }
+
+        public ActionResult FloorToAddOperationTheater(int id)
+        {
+            return RedirectToAction("FromFloorCreate", "OperationTheater", new { id = id });
+        }
+
+
         // GET: Floor/Details/5
         public ActionResult Details(int id)
         {
@@ -83,6 +94,9 @@ namespace HospitalManagement.Web.Controllers
 
             int Wards = _context.Wards.Count(x => x.FloorId == id);
             ViewBag.Wards = Wards;
+
+            int countOTs = _context.OpertionTheaters.Count(x => x.FloorId == id);
+            ViewBag.OTs = countOTs;
 
             return View(floor);
         }

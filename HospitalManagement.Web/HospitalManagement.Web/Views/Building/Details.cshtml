@@ -27,6 +27,15 @@
         </dd>
 
         <dt>
+            @Html.ActionLink("Operation Theaters", "BuildingToOperationTheaterDash", new { id = Model.Id }) :
+        </dt>
+
+        <dd>
+            @ViewBag.OTs  &nbsp;  @Html.ActionLink("Add Operation Theater", "BuildingToAddOperationTheater", new { id = Model.Id })
+        </dd>
+
+
+        <dt>
             @Html.ActionLink("Departments", "BuildingToDepartmentList", new { id = Model.Id }) :
         </dt>
 

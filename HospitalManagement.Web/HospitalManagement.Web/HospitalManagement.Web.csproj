@@ -213,6 +213,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LabAdminController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OperationTheaterController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\SuperAdminController.cs" />
     <Compile Include="Controllers\TicketCounterController.cs" />
@@ -327,6 +328,12 @@
     <Content Include="Views\TicketCounter\Delete.cshtml" />
     <Content Include="Views\TicketCounter\FromBuildingDash.cshtml" />
     <Content Include="Views\TicketCounter\FromBuildingCreate.cshtml" />
+    <Content Include="Views\OperationTheater\FromBuildingDash.cshtml" />
+    <Content Include="Views\OperationTheater\FromFloorDash.cshtml" />
+    <Content Include="Views\OperationTheater\FromBuildingCreate.cshtml" />
+    <Content Include="Views\OperationTheater\FromFloorCreate.cshtml" />
+    <Content Include="Views\OperationTheater\Delete.cshtml" />
+    <Content Include="Views\OperationTheater\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

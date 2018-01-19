@@ -15,14 +15,21 @@ namespace HospitalManagement.Data
         public int Number { get; set; }
 
         [Required]
-        public bool Isempty { get; set; }
+        public string IsEmpty { get; set; } // Is there is any patient assinged 
 
+        public string Where { get; set; } // Where is the Seat Is ? In Ward Or In a Room 
+        public string WhereID { get; set; } // For WardID or For Room Id
+
+        public int HasbeenUsed { get; set; }
+
+        public DateTime Updated { get; set; }
+        public string UpdatedBy { get; set; }
 
         //..............
-        public Patient Patient { get; set; }
+       // public Patient Patient { get; set; }
 
-        public IList<Ward>Ward { get; set; }
+        //public IList<Ward>Ward { get; set; }
 
-        public IList<Room> Room { get; set; }
+        //public IList<Room> Room { get; set; }
     }
 }

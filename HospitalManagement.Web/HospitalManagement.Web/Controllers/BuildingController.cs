@@ -43,6 +43,9 @@ namespace HospitalManagement.Web.Controllers
             int counticketcounter = _context.TicketCounter.Count(x => x.BuildingId == id);
             ViewBag.TicketCounter = counticketcounter;
 
+            int countOTs = _context.OpertionTheaters.Count(x => x.BuildingId == id);
+            ViewBag.OTs = countOTs;
+
             Building B = _context.Building.Find(id);
             return View(B);
         }
@@ -91,6 +94,17 @@ namespace HospitalManagement.Web.Controllers
         {
             return RedirectToAction("FromBuildingCreate", "TicketCounter",new {id=id });
         }
+
+        public ActionResult BuildingToOperationTheaterDash(int id)
+        {
+            return RedirectToAction("FromBuildingDash", "OperationTheater", new { id = id });
+        }
+
+        public ActionResult BuildingToAddOperationTheater(int id)
+        {
+            return RedirectToAction("FromBuildingCreate", "OperationTheater", new { id = id });
+        }
+
         // GET: Building/Create
         public ActionResult Create()
         {

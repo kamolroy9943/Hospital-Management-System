@@ -1,0 +1,86 @@
+﻿@model HospitalManagement.Data.OperationTheater
+
+@{
+    ViewBag.Title = ViewBag.Message;
+    
+}
+
+<h2>FromBuildingCreate</h2>
+
+
+
+@using (Html.BeginForm("FromBuildingCreate","OperationTheater",new {BuildingId=@ViewBag.BuildingId }))
+{
+   
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4> Add OperationTheater in @ViewBag.BuildingName </h4>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FloorNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div id ="flid" class="col-md-10">
+                @Html.DropDownListFor(model => model.FloorId, ViewBag.Floorlist as SelectList, "-- Select Floor --", new { @class = "form-control" })
+
+            </div>
+        </div>
+        
+                <span id="countOTs"> @ViewBag.ok</span>
+          
+       
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" id="btn" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("OTs of this Building", "FromBuildingDash",new {id= @ViewBag.BuildingId })
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script>
+    $(document).ready(function ()
+    {
+        $("#FloorId").change(function () {
+
+            $.get('/OperationTheater/GetCurrentOTs', { FloorId: $('#FloorId').val() }, function (data) {
+                 @*@ViewBag.BuildingId="data";*@
+                
+                var NextOt = data + 1;
+                var say = "There are already " + data + "  number of Operation Theater exist So next Operation Theater's Number will be = " + NextOt;
+                 $('#countOTs').html(say);
+
+            });
+
+        });
+
+       
+        
+       
+    });
+
+</script>
+
+
+@**@
+
+
+
+ @*$("#FloorId").change(function () {
+            $.ajax({
+                url: "@Url.Action("GetCurrentOTs", "OperationTheater")",
+                data: "FloorId",
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                alert(data);
+                },
+                error: function () {
+                alert("Failed! Please try again.");
+                }
+                });
+                });*@
