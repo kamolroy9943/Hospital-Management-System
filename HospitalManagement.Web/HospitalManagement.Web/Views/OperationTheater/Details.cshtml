@@ -1,0 +1,67 @@
+﻿@model HospitalManagement.Data.OperationTheater
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OperationTheater</h4>
+    <hr />
+    <dl class="dl-horizontal">
+      
+        <dt>
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BuildingName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuildingName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FloorNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FloorNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OperationDone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OperationDone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Updated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Updated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Delete", "Delete", new { id = Model.Id,from=ViewBag.from,fromid=ViewBag.fromid }) |
+   
+</p>

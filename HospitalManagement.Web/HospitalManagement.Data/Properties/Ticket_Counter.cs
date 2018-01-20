@@ -15,7 +15,12 @@ namespace HospitalManagement.Data
         [Required]
         public int Number { get; set; }
 
-        
+        public int BuildingId { get; set; }
+        public string BuildingName { get; set; }
+        public Building Building { get; set; }
+
+        public DateTime Updated { get; set; }
+        public string UpdatedBy { get; set; }
 
     }
 }

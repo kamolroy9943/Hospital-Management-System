@@ -15,25 +15,26 @@ namespace HospitalManagement.Data
         [Required]
         public  string Name { get; set; }
 
-       // public Building Building { get; set; }
-        public int BuildingId { get; set; }
         public string BuildingName { get; set; }
-       
+        public virtual Building Building { get; set; }
 
-       // public Floor Floor { get; set; }
+
+        public int BuildingId { get; set; }
+
         public int FloorId { get; set; }
         public int FloorNumber { get; set; }
-       
-
-
-       // public IList<Building>Building { get; set; }
-
-        //public ICollection<Ward> Wards { get; set; }
-
-       // public IList<Floor>Floor { get; set; }
+        public Floor Floor { get; set; }
 
         public DateTime Updated { get; set; }
         public string updatedby { get; set; }
+
+        
+
+        public ICollection<Ward> Wards { get; set; }
+
+        // public IList<Floor>Floor { get; set; }
+
+
 
         //public ICollection<Patient> Patients { get; set; }
 

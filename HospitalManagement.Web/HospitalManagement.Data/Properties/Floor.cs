@@ -12,20 +12,20 @@ namespace HospitalManagement.Data
         [Key]
          public int Id { get; set; }
 
-        
-        public int FloorNumber { get; set; }
+         public int FloorNumber { get; set; }
 
         public int BuildingId { get; set; }
 
-        public Building Building { set; get; }
+        public virtual Building Building { set; get; }
         
-       // public ICollection<Department>Departments { get; set; }
+        public virtual ICollection<Department>Departments { get; set; }
 
-        //public ICollection<Room>Rooms { get; set; }
+        public  virtual ICollection<Room>Rooms { get; set; }
 
-        //public ICollection<Ward>Wards { get; set; }
-
-        //public ICollection<Lab> Labs { get; set; }
+        public ICollection<Ward>Wards { get; set; }
+        public ICollection<ICU> Icus { get; set; }
+        public ICollection<Lab> Labs { get; set; }
+        public ICollection<OperationTheater> OperationTheaters { get; set; }
 
         //public ICollection<Patient> Patients { get; set; }
     }

@@ -16,24 +16,24 @@ namespace HospitalManagement.Data
         [Required]
         public string BuildingName { get; set; }
 
-        [Required]
-        public int NumberOfFlorrs {get;set;}
-
         public DateTime Updated { get; set; }
 
         public string UpdatedBy { get; set; }       
 
         // Navigation Relation
 
-        public  ICollection<Floor> Floors { get; set; }
+        public  virtual ICollection<Floor> Floors { get; set; }
 
-        public ICollection<Department> Departments { get; set; }
+        public virtual ICollection<Department> Departments { get; set; }
 
-        //public ICollection<Ward> Wards { get; set; }
+        public  virtual ICollection<Room>Rooms { get; set; }
 
-        //public ICollection<Lab> Labs { get; set; }
+        public ICollection<Ward> Wards { get; set; }
 
-        //public ICollection<Ticket_Counter> Ticket_Counter { get; set; }
+        public ICollection<Lab> Labs { get; set; }
+        public ICollection<ICU> Icu { get; set; }
+        public ICollection<OperationTheater> OperationTheaters { get; set; }
+        public ICollection<Ticket_Counter> Ticket_Counter { get; set; }
 
         //public ICollection<Patient> Patients { get; set; }
     }

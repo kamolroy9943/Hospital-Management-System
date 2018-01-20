@@ -207,15 +207,24 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BuildingController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\FloorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ICUController.cs" />
     <Compile Include="Controllers\LabAdminController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OperationTheaterController.cs" />
+    <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\SuperAdminController.cs" />
+    <Compile Include="Controllers\TicketCounterController.cs" />
     <Compile Include="Controllers\usersController.cs" />
+    <Compile Include="Controllers\WardController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\HospitalManagementContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -282,6 +291,56 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\SuperAdmin\Index.cshtml" />
+    <Content Include="Views\Building\Index.cshtml" />
+    <Content Include="Views\Building\Create.cshtml" />
+    <Content Include="Views\Building\Edit.cshtml" />
+    <Content Include="Views\Building\Delete.cshtml" />
+    <Content Include="Views\Building\Details.cshtml" />
+    <Content Include="Views\Building\Dashboard.cshtml" />
+    <Content Include="Views\Floor\Create.cshtml" />
+    <Content Include="Views\Floor\Dashboard.cshtml" />
+    <Content Include="Views\Floor\Details.cshtml" />
+    <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Views\Department\List.cshtml" />
+    <Content Include="Views\Department\Create.cshtml" />
+    <Content Include="Views\Department\Edit.cshtml" />
+    <Content Include="Views\Department\Delete.cshtml" />
+    <Content Include="Views\Department\Details.cshtml" />
+    <Content Include="Views\Department\FromFloorDash.cshtml" />
+    <Content Include="Views\Department\FromFloorCreate.cshtml" />
+    <Content Include="Views\Room\Index.cshtml" />
+    <Content Include="Views\Room\DashBoard.cshtml" />
+    <Content Include="Views\Room\Create.cshtml" />
+    <Content Include="Views\Room\Edit.cshtml" />
+    <Content Include="Views\Room\Details.cshtml" />
+    <Content Include="Views\Ward\FromDepartmentDash.cshtml" />
+    <Content Include="Views\Ward\FromFloorDash.cshtml" />
+    <Content Include="Views\Ward\FromBuildingDash.cshtml" />
+    <Content Include="Views\Ward\FromDepartmentCreate.cshtml" />
+    <Content Include="Views\Ward\FromFloorCreate.cshtml" />
+    <Content Include="Views\Ward\FromBuildingCreate.cshtml" />
+    <Content Include="Views\Ward\Delete.cshtml" />
+    <Content Include="Views\Ward\Details.cshtml" />
+    <Content Include="Views\Ward\Edit.cshtml" />
+    <Content Include="Views\TicketCounter\Index.cshtml" />
+    <Content Include="Views\TicketCounter\Create.cshtml" />
+    <Content Include="Views\TicketCounter\Details.cshtml" />
+    <Content Include="Views\TicketCounter\Edit.cshtml" />
+    <Content Include="Views\TicketCounter\Delete.cshtml" />
+    <Content Include="Views\TicketCounter\FromBuildingDash.cshtml" />
+    <Content Include="Views\TicketCounter\FromBuildingCreate.cshtml" />
+    <Content Include="Views\OperationTheater\FromBuildingDash.cshtml" />
+    <Content Include="Views\OperationTheater\FromFloorDash.cshtml" />
+    <Content Include="Views\OperationTheater\FromBuildingCreate.cshtml" />
+    <Content Include="Views\OperationTheater\FromFloorCreate.cshtml" />
+    <Content Include="Views\OperationTheater\Delete.cshtml" />
+    <Content Include="Views\OperationTheater\Details.cshtml" />
+    <Content Include="Views\ICU\Index.cshtml" />
+    <Content Include="Views\ICU\FromBuildingCreate.cshtml" />
+    <Content Include="Views\ICU\FromBuildingDetails.cshtml" />
+    <Content Include="Views\ICU\Details.cshtml" />
+    <Content Include="Views\ICU\Create.cshtml" />
+    <Content Include="Views\ICU\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -293,6 +352,12 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HospitalManagement.Data\HospitalManagement.Data.csproj">
+      <Project>{e890f13c-b539-4ee9-9c26-c83766d8068d}</Project>
+      <Name>HospitalManagement.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

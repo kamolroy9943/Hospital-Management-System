@@ -17,7 +17,7 @@ namespace HospitalManagement.Web.Controllers
             {
                 return RedirectToAction("Check");
             }
-                return View();
+            return View();
         }
         //..........................................................................
 

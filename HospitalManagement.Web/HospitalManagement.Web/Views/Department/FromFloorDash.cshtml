@@ -1,0 +1,15 @@
+﻿@model IEnumerable<HospitalManagement.Data.Department>
+
+@{
+    ViewBag.Title = "FromFloorDash";
+}
+
+<h2>FromFloorDash</h2>
+
+
+
+@foreach(var item in Model)
+{
+
+   @Html.ActionLink(item.Name,"Details",new { id=item.Id}, new { @class = "btn btn-primary btn-large" })<br /><br />
+}
