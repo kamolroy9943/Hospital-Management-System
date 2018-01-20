@@ -11,7 +11,7 @@ namespace HospitalManagement.Web.Models
     {
 
         public DbSet<Building> Building { get; set; }
-
+       public DbSet<ICU> Icu { get; set; }
         public DbSet<Floor> Floors { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Room> Rooms { get; set; }
@@ -26,6 +26,7 @@ namespace HospitalManagement.Web.Models
             modelBuilder.Entity<Building>().HasMany(x=>x.Departments).WithRequired(f => f.Building).WillCascadeOnDelete(false);
             modelBuilder.Entity<Building>().HasMany(x => x.Ticket_Counter).WithRequired(f => f.Building).WillCascadeOnDelete(false);
             modelBuilder.Entity<Building>().HasMany(x => x.Labs).WithRequired(f => f.Building).WillCascadeOnDelete(false);
+            modelBuilder.Entity<Building>().HasMany(x => x.Icu).WithRequired(f => f.Building).WillCascadeOnDelete(false);
             modelBuilder.Entity<Building>().HasMany(x => x.Wards).WithRequired(f => f.Building).WillCascadeOnDelete(false);
             modelBuilder.Entity<Building>().HasMany(x => x.OperationTheaters).WithRequired(f => f.Building).WillCascadeOnDelete(false);
             modelBuilder.Entity<Floor>().HasMany(x => x.Wards).WithRequired(f => f.Floor).WillCascadeOnDelete(false);

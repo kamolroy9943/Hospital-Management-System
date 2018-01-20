@@ -46,10 +46,21 @@ namespace HospitalManagement.Web.Controllers
             int countOTs = _context.OpertionTheaters.Count(x => x.BuildingId == id);
             ViewBag.OTs = countOTs;
 
+            ViewBag.CountIcu = _context.Icu.Count(x => x.BuildingId == id);
+            if (ViewBag.CountIcu != 0) { ViewBag.IcuName = _context.Icu.FirstOrDefault(x => x.BuildingId == id).ICUName; }
+
             Building B = _context.Building.Find(id);
             return View(B);
         }
+        public ActionResult BuildingToDetail(int id)
+        {
+            return RedirectToAction("FromBuildingDetails", "ICU", new { id = id });
+        }
 
+        public ActionResult BuildingToCreate(int id)
+        {
+            return RedirectToAction("FromBuildingCreate", "ICU", new { id = id });
+        }
 
         public ActionResult BuildingToAddFloor(int id)
         {

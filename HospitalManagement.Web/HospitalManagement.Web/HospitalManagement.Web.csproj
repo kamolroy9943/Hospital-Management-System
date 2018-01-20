@@ -211,6 +211,7 @@
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\FloorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ICUController.cs" />
     <Compile Include="Controllers\LabAdminController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OperationTheaterController.cs" />
@@ -334,6 +335,12 @@
     <Content Include="Views\OperationTheater\FromFloorCreate.cshtml" />
     <Content Include="Views\OperationTheater\Delete.cshtml" />
     <Content Include="Views\OperationTheater\Details.cshtml" />
+    <Content Include="Views\ICU\Index.cshtml" />
+    <Content Include="Views\ICU\FromBuildingCreate.cshtml" />
+    <Content Include="Views\ICU\FromBuildingDetails.cshtml" />
+    <Content Include="Views\ICU\Details.cshtml" />
+    <Content Include="Views\ICU\Create.cshtml" />
+    <Content Include="Views\ICU\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

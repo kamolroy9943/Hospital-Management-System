@@ -188,6 +188,9 @@ namespace HospitalManagement.Web.Controllers
             try
             {
                 // TODO: Add delete logic here
+                var model = _context.Icu.Find(id);
+                _context.Icu.Remove(model);
+                _context.SaveChanges();
 
                 return RedirectToAction("Index");
             }

@@ -17,6 +17,23 @@
         <dd>
             @Html.DisplayFor(model => model.BuildingName)
         </dd>
+        <dt>ICU :</dt>
+        <dd>        @{
+            if (ViewBag.CountIcu != 0)
+            {
+                
+                @Html.ActionLink(Model.BuildingName+" - ICU", "BuildingToDetail", new { id = Model.Id })
+                
+            }
+            else
+            {
+                @Html.ActionLink("Add ICU", "BuildingToCreate", new { id = Model.Id })
+            }
+
+        }
+
+        </dd>
+
 
         <dt>
             @Html.ActionLink("Floors", "BuildingToFloorDash", new {id=Model.Id }) :
