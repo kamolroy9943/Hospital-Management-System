@@ -97,6 +97,9 @@ namespace HospitalManagement.Web.Controllers
 
             int countOTs = _context.OpertionTheaters.Count(x => x.FloorId == id);
             ViewBag.OTs = countOTs;
+            int CountSeat = _context.Seats.Count(x => x.FloorId == id);
+            ViewBag.Seats = CountSeat;
+
 
             return View(floor);
         }

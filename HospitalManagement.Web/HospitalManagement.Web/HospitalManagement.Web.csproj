@@ -216,6 +216,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OperationTheaterController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
+    <Compile Include="Controllers\SeatController.cs" />
     <Compile Include="Controllers\SuperAdminController.cs" />
     <Compile Include="Controllers\TicketCounterController.cs" />
     <Compile Include="Controllers\usersController.cs" />
@@ -341,6 +342,10 @@
     <Content Include="Views\ICU\Details.cshtml" />
     <Content Include="Views\ICU\Create.cshtml" />
     <Content Include="Views\ICU\Delete.cshtml" />
+    <Content Include="Views\Seat\WhereCreate.cshtml" />
+    <Content Include="Views\Seat\FromWhereList.cshtml" />
+    <Content Include="Views\Seat\WhereToCreate.cshtml" />
+    <Content Include="Views\Seat\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

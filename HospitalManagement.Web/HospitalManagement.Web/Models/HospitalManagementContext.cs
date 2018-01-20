@@ -26,12 +26,14 @@ namespace HospitalManagement.Web.Models
             modelBuilder.Entity<Building>().HasMany(x=>x.Departments).WithRequired(f => f.Building).WillCascadeOnDelete(false);
             modelBuilder.Entity<Building>().HasMany(x => x.Ticket_Counter).WithRequired(f => f.Building).WillCascadeOnDelete(false);
             modelBuilder.Entity<Building>().HasMany(x => x.Labs).WithRequired(f => f.Building).WillCascadeOnDelete(false);
+            modelBuilder.Entity<Building>().HasMany(x => x.Seats).WithRequired(f => f.Building).WillCascadeOnDelete(false);
             modelBuilder.Entity<Building>().HasMany(x => x.Icu).WithRequired(f => f.Building).WillCascadeOnDelete(false);
             modelBuilder.Entity<Building>().HasMany(x => x.Wards).WithRequired(f => f.Building).WillCascadeOnDelete(false);
             modelBuilder.Entity<Building>().HasMany(x => x.OperationTheaters).WithRequired(f => f.Building).WillCascadeOnDelete(false);
             modelBuilder.Entity<Floor>().HasMany(x => x.Wards).WithRequired(f => f.Floor).WillCascadeOnDelete(false);
             modelBuilder.Entity<Floor>().HasMany(x => x.Rooms).WithRequired(f => f.Floor).WillCascadeOnDelete(false);
             modelBuilder.Entity<Floor>().HasMany(x => x.Labs).WithRequired(f => f.Floor).WillCascadeOnDelete(false);
+            modelBuilder.Entity<Floor>().HasMany(x => x.Seats).WithRequired(f => f.Floor).WillCascadeOnDelete(false);
             modelBuilder.Entity<Floor>().HasMany(x => x.OperationTheaters).WithRequired(f => f.Floor).WillCascadeOnDelete(false);
             base.OnModelCreating(modelBuilder);
 

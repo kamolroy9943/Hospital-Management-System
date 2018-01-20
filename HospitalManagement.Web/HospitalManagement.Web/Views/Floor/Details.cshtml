@@ -59,6 +59,13 @@
              @Html.ActionLink("Add Wards", "FloorToAddWard", new { id = Model.Id })
         </dd>
 
+        <dt>
+            Seats @*@Html.ActionLink("Seats", "", new { id = Model.Id })*@ :
+        </dt>
+        <dd>
+            @ViewBag.Seats  &nbsp;  @*@Html.ActionLink("Add Operation Theater", "BuildingToAddOperationTheater", new { id = Model.Id })*@
+        </dd>
+
     </dl>
 </div>
 <p>
