@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<HospitalManagement.Data.Staff>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "RetiredList";
 }
 
-<h2>Index</h2>
+<h2>RetiredList</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")| | @Html.ActionLink("Staff Category","Index","StaffCategory") || @Html.ActionLink("Nurses", "Index", "Nurses")|| @Html.ActionLink("Show Retired Staffs", "RetiredList", "Staff")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -83,9 +80,9 @@
             @Html.DisplayFor(modelItem => item.UpdatedBy)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Retire Staff", "Delete", new { id=item.Id })
+            
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) 
+           
         </td>
     </tr>
 }

@@ -34,29 +34,50 @@ namespace HospitalManagement.Web.Controllers
                 _context.StaffCategory.Add(Category); _context.SaveChanges();
 
             }
-            var model = _context.Staffs.ToList();
+            DateTime tt = DateTime.Parse("11/11/2000");
+            var model = _context.Staffs.Where(x=>x.RetireDate==tt).ToList();
+            return View(model);
+        }
+
+        public ActionResult RetiredList()
+        {
+            DateTime tt = DateTime.Parse("11/11/2000");
+            var model = _context.Staffs.Where(x => x.RetireDate != tt).ToList();
             return View(model);
         }
 
         // GET: Staff/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            DateTime tt = DateTime.Parse("11/11/2000");
+            var model = _context.Staffs.Find(id);
+            int chk=0;
+            if (model.RetireDate == tt) chk = 1;
+            ViewBag.chk = chk;
+            return View(model);
         }
 
         // GET: Staff/Create
         public ActionResult Create()
         {
+            List<Staff_Category> Category = _context.StaffCategory.ToList();
+            ViewBag.CategoryList = new SelectList(Category, "CategoryName", "CategoryName");
             return View();
         }
 
         // POST: Staff/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Staff collection)
         {
             try
             {
                 // TODO: Add insert logic here
+                collection.Updated = DateTime.Now;
+                collection.UpdatedBy = User.Identity.Name;
+                
+                DateTime tt =  DateTime.Parse("11/11/2000");
+                collection.RetireDate = tt;
+                _context.Staffs.Add(collection);_context.SaveChanges();
 
                 return RedirectToAction("Index");
             }
@@ -69,17 +90,33 @@ namespace HospitalManagement.Web.Controllers
         // GET: Staff/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            List<Staff_Category> Category = _context.StaffCategory.ToList();
+            ViewBag.CategoryList = new SelectList(Category, "CategoryName", "CategoryName");
+
+            var model = _context.Staffs.Find(id);
+            return View(model);
         }
 
         // POST: Staff/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Staff collection)
         {
             try
             {
                 // TODO: Add update logic here
+                Staff Staff = new Staff();
+                Staff.Name = collection.Name;
+                Staff.Contact = collection.Contact;
+                Staff.ContactNo = collection.ContactNo;
+                Staff.ContactEmail = collection.ContactEmail;
+                Staff.Salary = collection.Salary;
+                Staff.Designation = collection.Designation;
+                Staff.joinningDate = collection.joinningDate;
+                Staff.Updated = DateTime.Now;
+                Staff.UpdatedBy = User.Identity.Name;
 
+                _context.Entry(Staff).State = System.Data.Entity.EntityState.Modified;
+                _context.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -91,16 +128,24 @@ namespace HospitalManagement.Web.Controllers
         // GET: Staff/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var model = _context.Staffs.Find(id);
+            return View(model);
         }
 
         // POST: Staff/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Staff collection)
         {
             try
             {
                 // TODO: Add delete logic here
+                Staff staff = _context.Staffs.Find(id);
+                staff.RetireDate = collection.RetireDate;
+                staff.Updated = DateTime.Now;
+                staff.UpdatedBy = User.Identity.Name;
+
+                _context.Entry(staff).State = System.Data.Entity.EntityState.Modified;
+                _context.SaveChanges();
 
                 return RedirectToAction("Index");
             }

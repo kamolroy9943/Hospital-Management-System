@@ -1,0 +1,125 @@
+﻿@model HospitalManagement.Data.Staff
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+   
+    <div class="form-horizontal">
+        <h4>Staff</h4>
+        <hr />
+
+        <div>
+           
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Contact)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Contact)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ContactNo)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ContactNo)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ContactEmail)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ContactEmail)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Salary)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Salary)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Designation)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Designation)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.joinningDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.joinningDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.RetireDate)
+                </dt>
+
+                <dd>
+                    @Html.EditorFor(model => model.RetireDate, new { htmlAttributes = new { @class = "form-control" } })
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.IssuedBy)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IssuedBy)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Updated)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Updated)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.UpdatedBy)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UpdatedBy)
+                </dd>
+
+            </dl>
+        </div>
+
+       
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Retire Him/Her" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

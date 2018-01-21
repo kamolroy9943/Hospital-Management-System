@@ -25,9 +25,10 @@ namespace HospitalManagement.Data
         [Required]
         public string Designation { get; set; }
 
-        [Required]
+        [DataType(DataType.Date)]
         public DateTime joinningDate { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime RetireDate { get; set; }
 
         [Required]
