@@ -213,6 +213,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ICUController.cs" />
     <Compile Include="Controllers\LabAdminController.cs" />
+    <Compile Include="Controllers\LabController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OperationTheaterController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
@@ -346,6 +347,13 @@
     <Content Include="Views\Seat\FromWhereList.cshtml" />
     <Content Include="Views\Seat\WhereToCreate.cshtml" />
     <Content Include="Views\Seat\Delete.cshtml" />
+    <Content Include="Views\Lab\LabDash.cshtml" />
+    <Content Include="Views\Lab\FromCreate.cshtml" />
+    <Content Include="Views\Lab\Create.cshtml" />
+    <Content Include="Views\Lab\Index.cshtml" />
+    <Content Include="Views\Lab\Edit.cshtml" />
+    <Content Include="Views\Lab\Details.cshtml" />
+    <Content Include="Views\Lab\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

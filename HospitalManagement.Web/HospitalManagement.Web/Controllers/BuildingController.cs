@@ -52,10 +52,21 @@ namespace HospitalManagement.Web.Controllers
             int CountSeat = _context.Seats.Count(x => x.BuildingId == id);
             ViewBag.Seats = CountSeat;
 
+            int CounLab = _context.Labs.Count(x => x.BuildingId == id);
+            ViewBag.Labs = CounLab;
+
             Building B = _context.Building.Find(id);
             return View(B);
         }
+        public ActionResult BuildingToLabDash(int id)
+        {
+            return RedirectToAction("LabDash", "Lab", new { where = "Building", id = id });
+        }
 
+        public ActionResult BuildingToAddLab(int id)
+        {
+            return RedirectToAction("FromCreate", "Lab", new { where="Building",id=id});
+        }
         public ActionResult BuildingToWhere(int id,string where)
         {
             if(where=="ICU")
