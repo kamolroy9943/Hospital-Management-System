@@ -20,6 +20,9 @@ namespace HospitalManagement.Web.Models
         public DbSet<OperationTheater> OpertionTheaters { get; set; }
         public DbSet<Seat>Seats { get; set; }
         public DbSet<Ticket_Counter>TicketCounter { get; set; }
+        public DbSet<Staff> Staffs { get; set; }
+        public DbSet<Staff_Category> StaffCategory { get; set; }
+        public DbSet<Nurse> Nurses { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

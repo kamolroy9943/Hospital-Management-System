@@ -12,16 +12,17 @@ namespace HospitalManagement.Data
         [Key]
         public int Id { get; set; }
 
+       
+
         public int SerialNumber { get; set; }
 
+        public int Ticket_CounterId { get; set; }
+        public Ticket_Counter TicketCounter { get; set; }
         [Required]
         public string PatientName { get; set; }
 
-        public Department DepartmentName { get; set; }
+        public string Department { get; set; }
 
-        public Room RoomNumber { get; set; }
-
-        public DateTime Date { get; set; }
 
         public int Price { get; set; }
 

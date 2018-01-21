@@ -215,9 +215,12 @@
     <Compile Include="Controllers\LabAdminController.cs" />
     <Compile Include="Controllers\LabController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NurseController.cs" />
     <Compile Include="Controllers\OperationTheaterController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\SeatController.cs" />
+    <Compile Include="Controllers\StaffCategoryController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\SuperAdminController.cs" />
     <Compile Include="Controllers\TicketCounterController.cs" />
     <Compile Include="Controllers\usersController.cs" />
@@ -354,6 +357,12 @@
     <Content Include="Views\Lab\Edit.cshtml" />
     <Content Include="Views\Lab\Details.cshtml" />
     <Content Include="Views\Lab\Delete.cshtml" />
+    <Content Include="Views\Staff\Index.cshtml" />
+    <Content Include="Views\StaffCategory\Index.cshtml" />
+    <Content Include="Views\Nurse\Index.cshtml" />
+    <Content Include="Views\StaffCategory\Create.cshtml" />
+    <Content Include="Views\StaffCategory\Delete.cshtml" />
+    <Content Include="Views\StaffCategory\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
