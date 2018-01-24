@@ -215,7 +215,6 @@
     <Compile Include="Controllers\LabAdminController.cs" />
     <Compile Include="Controllers\LabController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\NurseController.cs" />
     <Compile Include="Controllers\OperationTheaterController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\SeatController.cs" />

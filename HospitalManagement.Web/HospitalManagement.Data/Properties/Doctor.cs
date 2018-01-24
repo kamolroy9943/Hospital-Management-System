@@ -27,9 +27,12 @@ namespace HospitalManagement.Data
         public string SurgeryOrMedicine { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         public DateTime JoinningDate { get; set; }
-        public string IsStill { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime RetireDate { get; set; }
+
         public DateTime Updated { get; set; }
         public string UpdatedBy { get; set; }
 

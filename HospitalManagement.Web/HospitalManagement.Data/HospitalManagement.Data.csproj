@@ -51,7 +51,6 @@
     <Compile Include="Properties\Floor.cs" />
     <Compile Include="Properties\Lab-Report.cs" />
     <Compile Include="Properties\Lab.cs" />
-    <Compile Include="Properties\Nurse.cs" />
     <Compile Include="Properties\Patient.cs" />
     <Compile Include="Properties\Room.cs" />
     <Compile Include="Properties\Seat.cs" />

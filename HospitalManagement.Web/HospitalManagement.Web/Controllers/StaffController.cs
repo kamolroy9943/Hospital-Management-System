@@ -11,6 +11,7 @@ namespace HospitalManagement.Web.Controllers
     public class StaffController : Controller
     {
         HospitalManagementContext _context = new HospitalManagementContext();
+        Staff_Category cat = new Staff_Category();
         // GET: Staff
         public ActionResult Index()
         {
@@ -34,10 +35,22 @@ namespace HospitalManagement.Web.Controllers
                 _context.StaffCategory.Add(Category); _context.SaveChanges();
 
             }
+            List<Staff_Category> Categoryl = _context.StaffCategory.ToList();
+            ViewBag.CategoryList = new SelectList(Categoryl, "CategoryName", "CategoryName");
+
             DateTime tt = DateTime.Parse("11/11/2000");
             var model = _context.Staffs.Where(x=>x.RetireDate==tt).ToList();
             return View(model);
         }
+
+        public JsonResult GetList(string Category)
+        {
+
+            _context.Configuration.ProxyCreationEnabled = false;
+            List<Staff> List = _context.Staffs.Where(x => x.Designation == Category).ToList();
+            return Json(List, JsonRequestBehavior.AllowGet);
+        }
+
 
         public ActionResult RetiredList()
         {
@@ -72,7 +85,7 @@ namespace HospitalManagement.Web.Controllers
             try
             {
                 // TODO: Add insert logic here
-                collection.Updated = DateTime.Now;
+                collection.Updated = DateTime.Today;
                 collection.UpdatedBy = User.Identity.Name;
                 
                 DateTime tt =  DateTime.Parse("11/11/2000");
@@ -112,7 +125,7 @@ namespace HospitalManagement.Web.Controllers
                 Staff.Salary = collection.Salary;
                 Staff.Designation = collection.Designation;
                 Staff.joinningDate = collection.joinningDate;
-                Staff.Updated = DateTime.Now;
+                Staff.Updated = DateTime.Today;
                 Staff.UpdatedBy = User.Identity.Name;
 
                 _context.Entry(Staff).State = System.Data.Entity.EntityState.Modified;
