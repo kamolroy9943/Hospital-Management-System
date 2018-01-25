@@ -22,7 +22,7 @@ namespace HospitalManagement.Controllers
                 ApplicationDbContext context = new ApplicationDbContext();
                 var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
                 var s = UserManager.GetRoles(user.GetUserId());
-                
+
                 if (s[0].ToString() == "SuperAdmin")
                 {
                     mark = 1;
@@ -34,6 +34,10 @@ namespace HospitalManagement.Controllers
                 else if (s[0].ToString() == "LabAdmin")
                 {
                     mark = 3;
+                }
+                else if (s[0].ToString() == "TicketAdmin")
+                {
+                    mark = 4;
                 }
                 else
                 {
@@ -72,6 +76,12 @@ namespace HospitalManagement.Controllers
                     //ViewBag.displayMenu = "Yes";
                     return RedirectToAction("Index", "LabAdmin");
                 }
+                if (mark == 4)
+                {
+                    //ViewBag.displayMenu = "Yes";
+                    return RedirectToAction("Index", "TicketAdmin");
+                }
+
 
                 //return View();
             }

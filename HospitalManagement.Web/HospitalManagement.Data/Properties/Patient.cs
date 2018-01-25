@@ -24,6 +24,9 @@ namespace HospitalManagement.Data
         [Required]
         public string History { get; set; }
 
+        public string Diagnosis { get; set; }
+        public string DiagnosisBy { get; set; }
+
         [Required]
         [DataType(DataType.Date)]
         public DateTime AdmitDate { get; set; }

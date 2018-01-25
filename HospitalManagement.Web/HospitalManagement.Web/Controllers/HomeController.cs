@@ -15,7 +15,7 @@ namespace HospitalManagement.Web.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Check");
+                return RedirectToAction("Index","users");
             }
             return View();
         }

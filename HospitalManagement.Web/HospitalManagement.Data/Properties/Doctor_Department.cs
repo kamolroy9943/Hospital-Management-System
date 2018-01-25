@@ -15,11 +15,11 @@ namespace HospitalManagement.Data
         
         public int DoctorId { get; set; }
         public string DoctorName { get; set; }
-        public Doctor Doctor { get; set; }
+        
 
         public int DepartmentId { get; set; }
         public string DepartmentName { get; set; }
-        public Department Department { get; set; }
+        
 
         public DateTime Updated { get; set; }
         public string UpdatedBy { get; set; }

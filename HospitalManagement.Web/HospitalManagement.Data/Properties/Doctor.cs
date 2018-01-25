@@ -21,7 +21,7 @@ namespace HospitalManagement.Data
         public string ContactNo { get; set; }
         public string ContactEmail { get; set; }
 
-        public string Department { get; set; }
+        public string Departments { get; set; }
         public string Degrees { get; set; }
 
         public string SurgeryOrMedicine { get; set; }

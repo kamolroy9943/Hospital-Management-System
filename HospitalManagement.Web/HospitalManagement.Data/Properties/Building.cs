@@ -34,6 +34,7 @@ namespace HospitalManagement.Data
         public ICollection<ICU> Icu { get; set; }
         public ICollection<OperationTheater> OperationTheaters { get; set; }
         public ICollection<Ticket_Counter> Ticket_Counter { get; set; }
+        public ICollection<Ticket> Tickets { get; set; }
 
         //public ICollection<Patient> Patients { get; set; }
     }
