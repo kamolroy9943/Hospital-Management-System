@@ -13,10 +13,10 @@ namespace HospitalManagement.Web.Controllers
     {
         public ActionResult Index()
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                return RedirectToAction("Check");
-            }
+            //if (User.Identity.IsAuthenticated)
+            //{
+            //    return RedirectToAction("Check");
+            //}
             return View();
         }
         //..........................................................................

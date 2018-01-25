@@ -231,8 +231,14 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\all-themes.css" />
+    <Content Include="Content\bootstrap-dark.css" />
+    <Content Include="Content\bootstrap-luman.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\icon.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\morris.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -245,16 +251,25 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Chart.bundle.min.js" />
+    <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.sparkline.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\libscripts.bundle.js" />
+    <Content Include="Scripts\mainscripts.bundle.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\morphingscripts.bundle.js" />
+    <Content Include="Scripts\morphingsearchscripts.bundle.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\sparkline.min.js" />
+    <Content Include="Scripts\vendorscripts.bundle.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -341,6 +356,7 @@
     <Content Include="Views\ICU\Details.cshtml" />
     <Content Include="Views\ICU\Create.cshtml" />
     <Content Include="Views\ICU\Delete.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
