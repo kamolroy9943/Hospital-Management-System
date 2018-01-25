@@ -13,8 +13,9 @@ namespace HospitalManagement.Data
         public int Id { get; set; }
 
         [Required]
-        public string Category { get; set; }
+        public string CategoryName { get; set; }
 
-       public ICollection<Staff> staff { get; set; }
+        public DateTime Updated { get; set; }
+        public string UpdatedBy { get; set; }
     }
 }

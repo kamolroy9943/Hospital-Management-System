@@ -213,10 +213,15 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ICUController.cs" />
     <Compile Include="Controllers\LabAdminController.cs" />
+    <Compile Include="Controllers\LabController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OperationTheaterController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
+    <Compile Include="Controllers\SeatController.cs" />
+    <Compile Include="Controllers\StaffCategoryController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\SuperAdminController.cs" />
+    <Compile Include="Controllers\TicketAdminController.cs" />
     <Compile Include="Controllers\TicketCounterController.cs" />
     <Compile Include="Controllers\usersController.cs" />
     <Compile Include="Controllers\WardController.cs" />
@@ -341,6 +346,31 @@
     <Content Include="Views\ICU\Details.cshtml" />
     <Content Include="Views\ICU\Create.cshtml" />
     <Content Include="Views\ICU\Delete.cshtml" />
+    <Content Include="Views\Seat\WhereCreate.cshtml" />
+    <Content Include="Views\Seat\FromWhereList.cshtml" />
+    <Content Include="Views\Seat\WhereToCreate.cshtml" />
+    <Content Include="Views\Seat\Delete.cshtml" />
+    <Content Include="Views\Lab\LabDash.cshtml" />
+    <Content Include="Views\Lab\FromCreate.cshtml" />
+    <Content Include="Views\Lab\Create.cshtml" />
+    <Content Include="Views\Lab\Index.cshtml" />
+    <Content Include="Views\Lab\Edit.cshtml" />
+    <Content Include="Views\Lab\Details.cshtml" />
+    <Content Include="Views\Lab\Delete.cshtml" />
+    <Content Include="Views\Staff\Index.cshtml" />
+    <Content Include="Views\StaffCategory\Index.cshtml" />
+    <Content Include="Views\Nurse\Index.cshtml" />
+    <Content Include="Views\StaffCategory\Create.cshtml" />
+    <Content Include="Views\StaffCategory\Delete.cshtml" />
+    <Content Include="Views\StaffCategory\Edit.cshtml" />
+    <Content Include="Views\Staff\Create.cshtml" />
+    <Content Include="Views\Staff\Edit.cshtml" />
+    <Content Include="Views\Staff\Details.cshtml" />
+    <Content Include="Views\Staff\RetiredList.cshtml" />
+    <Content Include="Views\Staff\Delete.cshtml" />
+    <Content Include="Views\TicketAdmin\Index.cshtml" />
+    <Content Include="Views\TicketAdmin\Create.cshtml" />
+    <Content Include="Views\TicketAdmin\ShowTodays.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

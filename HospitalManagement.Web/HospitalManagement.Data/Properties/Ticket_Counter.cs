@@ -22,5 +22,7 @@ namespace HospitalManagement.Data
         public DateTime Updated { get; set; }
         public string UpdatedBy { get; set; }
 
+        public ICollection<Ticket> Tickets { get; set; }
+
     }
 }

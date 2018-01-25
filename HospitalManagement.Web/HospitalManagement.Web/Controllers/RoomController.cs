@@ -29,10 +29,27 @@ namespace HospitalManagement.Web.Controllers
         // GET: Room/Details/5
         public ActionResult Details(int id)
         {
+            var Seat = _context.Seats.Where(x => x.Where == "Room").ToList();
+            var CountSeat = Seat.Count(x => x.WhereID == id);
+            ViewBag.RoomId = id;
+            ViewBag.CountSeat = CountSeat;
+
             var model = _context.Rooms.Find(id);
             return View(model);
         }
-
+        public ActionResult RoomToDelete(int whereId)
+        {
+            return RedirectToAction("Delete", "Seat", new { where = "Ward", whereId = whereId });
+        }
+        public ActionResult RoomToSeatList(string where,int whereId)
+        {
+            return RedirectToAction("FromWhereList", "Seat", new { where = "Room", whereid = whereId });
+        }
+        
+        public ActionResult RoomToCreate(string where,int whereId)
+        {
+            return RedirectToAction("WhereCreate", "Seat", new { where = "Room", whereId = whereId });
+        }
         // GET: Room/Create
         public ActionResult Create(int id)
         {

@@ -31,7 +31,7 @@ namespace HospitalManagement.Data
         
 
         public ICollection<Ward> Wards { get; set; }
-
+        public ICollection<Ticket> Tickets { get; set; }
         // public IList<Floor>Floor { get; set; }
 
 

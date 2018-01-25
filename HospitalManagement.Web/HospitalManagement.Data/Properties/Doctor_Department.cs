@@ -12,10 +12,17 @@ namespace HospitalManagement.Data
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        
+        public int DoctorId { get; set; }
+        public string DoctorName { get; set; }
+        
+
+        public int DepartmentId { get; set; }
         public string DepartmentName { get; set; }
         
 
-        public ICollection<Doctor> Doctors { get; set; }
+        public DateTime Updated { get; set; }
+        public string UpdatedBy { get; set; }
+
     }
 }

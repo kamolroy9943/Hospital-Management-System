@@ -12,8 +12,11 @@ namespace HospitalManagement.Data
         [Key]
         public int Id { get; set; }
 
-        public string Doctors_Checked { get; set; }
-        public string Medicine { get; set; }
-        public DateTime Date { get; set; }
+        public int PatientId { get; set; }
+
+        public string MedicineHistory { get; set; }
+        public string MedicineUpadatedBy { get; set; }
+
+        
     }
 }
