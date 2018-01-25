@@ -1,0 +1,132 @@
+﻿
+@model IEnumerable<HospitalManagement.Data.Staff>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Add Staff", "Create")| | @Html.ActionLink("Staff Category","Index","StaffCategory") ||  @Html.ActionLink("Show Retired Staffs", "RetiredList", "Staff")
+</p>
+<div class="form-group">
+    <div class="col-md-10">
+        @Html.DropDownList("Designation", ViewBag.CategoryList as SelectList, "--- Select Category--", new { @class = "form-control" })
+    </div>
+</div>
+
+
+    <table id="tb" class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Designation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.joinningDate)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.RetireDate)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.IssuedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Updated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedBy)
+            </th>
+            <th></th>
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr >
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Designation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.joinningDate)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.RetireDate)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.IssuedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Updated)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdatedBy)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Retire Staff", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+
+
+    </table>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+           
+            $("#Designation").change(function () {
+                 $("#tb").empty();
+                $.get("/Staff/GetList", { Category: $("#Designation").val() }, function (data) {
+                    var row;
+                   row += "<tr><th>" + "Name" + "</th><th>" + "Contact" + "</th><th>" + "ContactNo" + "</th><th>" + "ContactEmail" + "</th><th>" + "Salary" + "</th><th>" + "Designation" + "</th><th>" + "joinningDate" + "</th><th>" + "IssuedBy" + "</th><th>" + "Updated" + "</th><th>" + "UpdatedBy" + "</th><th>" + '<a href="link">' + "</th></tr>"
+                    $.each(data, function (i, item) {
+                        var MyDate_String_Value = item.joinningDate;
+                         var value = new Date( parseInt(MyDate_String_Value.replace(/(^.*\()|([+-].*$)/,'')) );
+                        var dat = value.getMonth() +1 +"/" +value.getDate() +"/" +  value.getFullYear();
+
+                        var MyDate = item.Updated;
+                        var val = new Date(parseInt(MyDate.replace(/(^.*\()|([+-].*$)/, '')));
+                        var Update = val.getMonth() + 1 + "/" + val.getDate() + "/" + val.getFullYear();
+                        row += "<tr><td>" + item.Name + "</td><td>" + item.Contact + "</td><td>" + item.ContactNo + "</td><td>" + item.ContactEmail + "</td><td>" + item.Salary + "</td><td>" + item.Designation + "</td><td>" + dat + "</td><td>" + item.IssuedBy + "</td><td>" + Update + "</td><td>" + item.UpdatedBy + "</td><td>" + '<a href="/Staff/Edit/' + item.Id + '">Edit</a> ||<a href="/Staff/Details/' + item.Id + '">Details</a> | |<a href="/Staff/Delete/' + item.Id + '">Retire</a>' + "</td></tr>"
+                    });
+                    $("#tb").append(row);
+                });
+
+            })
+        });
+    </script>
+    @**@
+

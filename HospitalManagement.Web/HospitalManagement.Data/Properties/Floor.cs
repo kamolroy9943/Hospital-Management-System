@@ -21,7 +21,7 @@ namespace HospitalManagement.Data
         public virtual ICollection<Department>Departments { get; set; }
 
         public  virtual ICollection<Room>Rooms { get; set; }
-
+        public ICollection<Seat> Seats { get; set; }
         public ICollection<Ward>Wards { get; set; }
         public ICollection<ICU> Icus { get; set; }
         public ICollection<Lab> Labs { get; set; }

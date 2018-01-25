@@ -49,9 +49,42 @@ namespace HospitalManagement.Web.Controllers
             ViewBag.CountIcu = _context.Icu.Count(x => x.BuildingId == id);
             if (ViewBag.CountIcu != 0) { ViewBag.IcuName = _context.Icu.FirstOrDefault(x => x.BuildingId == id).ICUName; }
 
+            int CountSeat = _context.Seats.Count(x => x.BuildingId == id);
+            ViewBag.Seats = CountSeat;
+
+            int CounLab = _context.Labs.Count(x => x.BuildingId == id);
+            ViewBag.Labs = CounLab;
+
             Building B = _context.Building.Find(id);
             return View(B);
         }
+        public ActionResult BuildingToLabDash(int id)
+        {
+            return RedirectToAction("LabDash", "Lab", new { where = "Building", id = id });
+        }
+
+        public ActionResult BuildingToAddLab(int id)
+        {
+            return RedirectToAction("FromCreate", "Lab", new { where="Building",id=id});
+        }
+        public ActionResult BuildingToWhere(int id,string where)
+        {
+            if(where=="ICU")
+            {
+                int ICUId = _context.Icu.FirstOrDefault(x => x.BuildingId == id).Id;
+                return RedirectToAction("WhereCreate", "Seat",new {where="ICU",whereId=ICUId });
+            }
+            else if(where=="Room")
+            {
+                return RedirectToAction("WhereToCreate", "Seat", new { BuildingId = id, where = "Room" });
+            }
+            else if(where=="Ward")
+            {
+                return RedirectToAction("WhereToCreate", "Seat", new { BuildingId = id, where = "Ward" });
+            }
+            return View();
+        }
+
         public ActionResult BuildingToDetail(int id)
         {
             return RedirectToAction("FromBuildingDetails", "ICU", new { id = id });
