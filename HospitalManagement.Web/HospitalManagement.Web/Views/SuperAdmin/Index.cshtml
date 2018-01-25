@@ -4,19 +4,24 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index  Super admin</h2>
-<div class="float-md-right">
-    @Html.ActionLink("Register", "Register", "Account", null, new { @class = "btn btn-primary btn-large" });<br><br>
-    @Html.ActionLink("Building", "Dashboard", "Building", null, new { @class = "btn btn-primary btn-large" });
-    <br><br>
-    @Html.ActionLink("Department", "Create", "Department", null, new { @class = "btn btn-primary btn-large" });
-    <br><br>
-    @Html.ActionLink("Ticket Counters", "Index", "TicketCounter", null, new { @class = "btn btn-primary btn-large" });
-    <br><br>
-    @Html.ActionLink("ICU", "Index", "ICU", null, new { @class = "btn btn-primary btn-large" });
-    <br><br>
-    @Html.ActionLink("Lab", "Index", "Lab", null, new { @class = "btn btn-primary btn-large" }); | | | |
-    @Html.ActionLink("Staffs" ,"Index", "Staff", null, new { @class = "btn btn-primary btn-large" });
 
-</div>
 
+<section class="content home">
+    <div class="container-fluid">
+        <div class="block-header">
+
+            <h2>Index  Super admin</h2>
+            <div class="float-md-right">
+                @Html.ActionLink("Register", "Register", "Account", null, new { @class = "btn btn-primary btn-large" });<br><br>
+                @Html.ActionLink("Building", "Dashboard", "Building", null, new { @class = "btn btn-primary btn-large" });
+                <br><br>
+                @Html.ActionLink("Department", "Create", "Department", null, new { @class = "btn btn-primary btn-large" });
+                <br><br>
+                @Html.ActionLink("Ticket Counters", "Index", "TicketCounter", null, new { @class = "btn btn-primary btn-large" });
+                <br><br>
+                @Html.ActionLink("ICU", "Index", "ICU", null, new { @class = "btn btn-primary btn-large" });
+
+            </div>
+            </div>
+        </div>
+    </section>
