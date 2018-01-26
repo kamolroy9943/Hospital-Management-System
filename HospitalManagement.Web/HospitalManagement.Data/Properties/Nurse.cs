@@ -7,15 +7,12 @@ using System.Threading.Tasks;
 
 namespace HospitalManagement.Data
 {
-    public class Doctor_Department
+   public class Nurse: Staff
     {
         [Key]
-        public int Id { get; set; }
+        public int NurseId { get; set; }
 
         [Required]
-        public string DepartmentName { get; set; }
-        
-
-        public ICollection<Doctor> Doctors { get; set; }
-    }
+        public string Post { get; set; }
+}
 }
