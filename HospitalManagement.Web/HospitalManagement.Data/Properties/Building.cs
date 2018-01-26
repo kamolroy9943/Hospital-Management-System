@@ -29,12 +29,11 @@ namespace HospitalManagement.Data
         public  virtual ICollection<Room>Rooms { get; set; }
 
         public ICollection<Ward> Wards { get; set; }
-        public ICollection<Seat>Seats { get; set; }
+
         public ICollection<Lab> Labs { get; set; }
         public ICollection<ICU> Icu { get; set; }
         public ICollection<OperationTheater> OperationTheaters { get; set; }
         public ICollection<Ticket_Counter> Ticket_Counter { get; set; }
-        public ICollection<Ticket> Tickets { get; set; }
 
         //public ICollection<Patient> Patients { get; set; }
     }

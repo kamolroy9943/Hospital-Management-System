@@ -24,25 +24,26 @@ namespace HospitalManagement.Data
         [Required]
         public string History { get; set; }
 
-        public string Diagnosis { get; set; }
-        public string DiagnosisBy { get; set; }
-
         [Required]
-        [DataType(DataType.Date)]
         public DateTime AdmitDate { get; set; }
-        [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
 
-        public string RefferedByDoctor { get; set; }
+        public string RefferedBy_DoctorId { get; set; }
         
-        public string AssingedDoctor { get; set; }
+        public IList<Department> Department { get; set; }
 
-        public string MedicineHistory { get; set; }
+        public IList<Building>Building { get; set; }
 
-        public string MedicineGivenBy { get; set; }
+        public IList<Floor> Floor { get; set; }
 
-        public DateTime Updated { get; set; }
-        public string UpdatedBy { get; set; }
+        public IList<Ward> Ward { get; set; }
+
+        public Seat Seat { get; set; }
+        
+      
+
+        [Required]
+        public string IssuedBy { get; set; }
 
     }
 }
