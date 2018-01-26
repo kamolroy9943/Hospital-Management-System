@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using HospitalManagement.Data;
 
+
 namespace HospitalManagement.Web.Models
 {
     public class HospitalManagementContext : DbContext
@@ -23,7 +24,9 @@ namespace HospitalManagement.Web.Models
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<Staff_Category> StaffCategory { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
-       
+        public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Patient> Patients { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -43,6 +46,8 @@ namespace HospitalManagement.Web.Models
             modelBuilder.Entity<Floor>().HasMany(x => x.OperationTheaters).WithRequired(f => f.Floor).WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Department>().HasMany(x => x.Tickets).WithRequired(f => f.Department).WillCascadeOnDelete(false);
+
+            
             base.OnModelCreating(modelBuilder);
 
         }

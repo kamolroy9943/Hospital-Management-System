@@ -209,6 +209,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BuildingController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\FloorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ICUController.cs" />
@@ -371,9 +372,16 @@
     <Content Include="Views\TicketAdmin\Index.cshtml" />
     <Content Include="Views\TicketAdmin\Create.cshtml" />
     <Content Include="Views\TicketAdmin\ShowTodays.cshtml" />
+    <Content Include="Views\Doctor\Index.cshtml" />
+    <Content Include="Views\Doctor\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Admins\" />
+    <Folder Include="Images\Doctors\" />
+    <Folder Include="Images\Others\" />
+    <Folder Include="Images\Patients\" />
+    <Folder Include="Images\Staffs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,7 +48,6 @@
     <Compile Include="Properties\Building.cs" />
     <Compile Include="Properties\Department.cs" />
     <Compile Include="Properties\Doctor.cs" />
-    <Compile Include="Properties\Doctor_Department.cs" />
     <Compile Include="Properties\Floor.cs" />
     <Compile Include="Properties\Lab-Report.cs" />
     <Compile Include="Properties\Lab.cs" />
