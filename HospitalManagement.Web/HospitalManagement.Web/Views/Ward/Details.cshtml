@@ -3,80 +3,84 @@
 @{
     ViewBag.Title = "Details";
 }
+<section class="content home">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Details</h2>
 
-<h2>Details</h2>
+            <div>
+                <h4>Ward</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Building.BuildingName)
+                    </dt>
 
-<div>
-    <h4>Ward</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Building.BuildingName)
-        </dt>
+                    <dd>
+                        @ViewBag.BuildingName
+                    </dd>
 
-        <dd>
-            @ViewBag.BuildingName
-        </dd>
+                    @* <dt>
+                            @Html.DisplayNameFor(model => model.Department.Name)
+                        </dt>
 
-       @* <dt>
-            @Html.DisplayNameFor(model => model.Department.Name)
-        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Department.Name)
+                        </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Department.Name)
-        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Floor.Id)
+                        </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Floor.Id)
-        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Floor.Id)
+                        </dd>*@
 
-        <dd>
-            @Html.DisplayFor(model => model.Floor.Id)
-        </dd>*@
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FloorNumber)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FloorNumber)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.FloorNumber)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FloorNumber)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DepartmentName)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DepartmentName)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DepartmentName)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.DepartmentName)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Updated)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Updated)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Updated)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Updated)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Updatedby)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Updatedby)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Updatedby)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Updatedby)
-        </dd>
+                </dl>
+            </div>
+            <p>
+                @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+                @*@Html.ActionLink("Back to List", "Index")*@
+            </p>
 
-    </dl>
-</div>
-<p>
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
-    @*@Html.ActionLink("Back to List", "Index")*@
-</p>
+</div></div></section>

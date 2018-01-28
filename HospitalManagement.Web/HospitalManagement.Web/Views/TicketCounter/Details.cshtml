@@ -3,51 +3,54 @@
 @{
     ViewBag.Title = "Details";
 }
+<section class="content home">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Details</h2>
 
-<h2>Details</h2>
+            <div>
+                <h4>Ticket_Counter</h4>
+                <hr />
+                <dl class="dl-horizontal">
 
-<div>
-    <h4>Ticket_Counter</h4>
-    <hr />
-    <dl class="dl-horizontal">
-       
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Number)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Number)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Number)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Number)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BuildingName)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.BuildingName)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BuildingName)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.BuildingName)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Updated)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Updated)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Updated)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Updated)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UpdatedBy)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UpdatedBy)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.UpdatedBy)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.UpdatedBy)
+                    </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("All Counter List", "Index") | |
-    @Html.ActionLink("This Building Counter List", "FromBuildingDash",new {id=Model.BuildingId })
-</p>
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("All Counter List", "Index") | |
+                @Html.ActionLink("This Building Counter List", "FromBuildingDash", new { id = Model.BuildingId })
+            </p>
+            </div></div></section>

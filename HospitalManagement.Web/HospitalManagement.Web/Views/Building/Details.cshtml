@@ -3,99 +3,103 @@
 @{
     ViewBag.Title = "Details";
 }
+<section class="content home">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Details</h2>
 
-<h2>Details</h2>
+            <div>
+                <h4>Building</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.BuildingName)
+                    </dt>
 
-<div>
-    <h4>Building</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.BuildingName)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.BuildingName)
+                    </dd>
+                    <dt>ICU :</dt>
+                    <dd>
+                        @{
+                            if (ViewBag.CountIcu != 0)
+                            {
 
-        <dd>
-            @Html.DisplayFor(model => model.BuildingName)
-        </dd>
-        <dt>ICU :</dt>
-        <dd>        @{
-            if (ViewBag.CountIcu != 0)
-            {
-                
-                @Html.ActionLink(Model.BuildingName+" - ICU", "BuildingToDetail", new { id = Model.Id })
-                
-            }
-            else
-            {
-                @Html.ActionLink("Add ICU", "BuildingToCreate", new { id = Model.Id })
-            }
+                                @Html.ActionLink(Model.BuildingName + " - ICU", "BuildingToDetail", new { id = Model.Id })
 
-        }
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Add ICU", "BuildingToCreate", new { id = Model.Id })
+                            }
 
-        </dd>
+                        }
 
-
-        <dt>
-            @Html.ActionLink("Floors", "BuildingToFloorDash", new {id=Model.Id }) :
-        </dt>
-          
-        <dd>
-            @ViewBag.Floors  &nbsp;  @Html.ActionLink("Add Floor", "BuildingToAddFloor",new {id=Model.Id })
-        </dd>
-
-        <dt>
-            @Html.ActionLink("Operation Theaters", "BuildingToOperationTheaterDash", new { id = Model.Id }) :
-        </dt>
-
-        <dd>
-            @ViewBag.OTs  &nbsp;  @Html.ActionLink("Add Operation Theater", "BuildingToAddOperationTheater", new { id = Model.Id })
-        </dd>
+                    </dd>
 
 
-        <dt>
-            @Html.ActionLink("Departments", "BuildingToDepartmentList", new { id = Model.Id }) :
-        </dt>
+                    <dt>
+                        @Html.ActionLink("Floors", "BuildingToFloorDash", new { id = Model.Id }) :
+                    </dt>
 
-        <dd>
-            @ViewBag.Departments  &nbsp;  @Html.ActionLink("Add Department", "BuildingToAddDepartment", new { id = Model.Id })
-        </dd>
+                    <dd>
+                        @ViewBag.Floors  &nbsp;  @Html.ActionLink("Add Floor", "BuildingToAddFloor", new { id = Model.Id })
+                    </dd>
 
-        <dt>
-            @Html.ActionLink("Wards", "BuildingToWardList", new { id = Model.Id }) :
-        </dt>
+                    <dt>
+                        @Html.ActionLink("Operation Theaters", "BuildingToOperationTheaterDash", new { id = Model.Id }) :
+                    </dt>
 
-        <dd>
-            @ViewBag.Wards &nbsp;  @Html.ActionLink("Add Wards", "BuildingToAddWard", new { id = Model.Id })
-        </dd>
-
-        <dt>
-            @Html.ActionLink("Ticket Counters", "BuildingToCounterList", new { id = Model.Id }) :
-        </dt>
-
-        <dd>
-            @ViewBag.TicketCounter &nbsp;  @Html.ActionLink("Add Ticket Counter", "BuildingToAddCounter", new { id = Model.Id })
-        </dd>
+                    <dd>
+                        @ViewBag.OTs  &nbsp;  @Html.ActionLink("Add Operation Theater", "BuildingToAddOperationTheater", new { id = Model.Id })
+                    </dd>
 
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Updated)
-        </dt>
+                    <dt>
+                        @Html.ActionLink("Departments", "BuildingToDepartmentList", new { id = Model.Id }) :
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Updated)
-        </dd>
+                    <dd>
+                        @ViewBag.Departments  &nbsp;  @Html.ActionLink("Add Department", "BuildingToAddDepartment", new { id = Model.Id })
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UpdatedBy)
-        </dt>
+                    <dt>
+                        @Html.ActionLink("Wards", "BuildingToWardList", new { id = Model.Id }) :
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.UpdatedBy)
-        </dd>
+                    <dd>
+                        @ViewBag.Wards &nbsp;  @Html.ActionLink("Add Wards", "BuildingToAddWard", new { id = Model.Id })
+                    </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                    <dt>
+                        @Html.ActionLink("Ticket Counters", "BuildingToCounterList", new { id = Model.Id }) :
+                    </dt>
+
+                    <dd>
+                        @ViewBag.TicketCounter &nbsp;  @Html.ActionLink("Add Ticket Counter", "BuildingToAddCounter", new { id = Model.Id })
+                    </dd>
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Updated)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Updated)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UpdatedBy)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.UpdatedBy)
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+            </div></div></section>

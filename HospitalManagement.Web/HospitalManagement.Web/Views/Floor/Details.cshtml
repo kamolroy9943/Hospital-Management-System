@@ -3,65 +3,68 @@
 @{
     ViewBag.Title = "Details";
 }
+<section class="content home">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Details of @Model.FloorNumber th floor of @ViewBag.BuildingName Building</h2>
 
-<h2>Details of @Model.FloorNumber th floor of @ViewBag.BuildingName Building</h2>
+            <div>
+                <h4>Floor</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Building.BuildingName)
+                    </dt>
 
-<div>
-    <h4>Floor</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Building.BuildingName)
-        </dt>
+                    <dd>
+                        @ViewBag.BuildingName
+                    </dd>
 
-        <dd>
-            @ViewBag.BuildingName
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FloorNumber)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FloorNumber)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.FloorNumber)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FloorNumber)
-        </dd>
+                    <dt>
+                        @Html.ActionLink("Rooms", "FloorToRoomList", new { id = Model.Id }) :
+                    </dt>
 
-        <dt>
-            @Html.ActionLink("Rooms", "FloorToRoomList", new { id = Model.Id }) :
-        </dt>
+                    <dd>
+                        @ViewBag.Rooms &nbsp;  @Html.ActionLink("Add Rooms", "FloorToAddRoom", new { id = Model.Id })
+                    </dd>
+                    <dt>
+                        @Html.ActionLink("Operation Theaters", "FloorToOperationTheaterDash", new { id = Model.Id }) :
+                    </dt>
 
-        <dd>
-            @ViewBag.Rooms &nbsp;  @Html.ActionLink("Add Rooms", "FloorToAddRoom", new { id = Model.Id })
-        </dd>
-        <dt>
-            @Html.ActionLink("Operation Theaters", "FloorToOperationTheaterDash", new { id = Model.Id }) :
-        </dt>
+                    <dd>
+                        @ViewBag.OTs  &nbsp;  @Html.ActionLink("Add Operation Theater", "FloorToAddOperationTheater", new { id = Model.Id })
+                    </dd>
 
-        <dd>
-            @ViewBag.OTs  &nbsp;  @Html.ActionLink("Add Operation Theater", "FloorToAddOperationTheater", new { id = Model.Id })
-        </dd>
+                    <dt>
+                        @Html.ActionLink("Departments", "FloorToDepartmentList", new { id = Model.Id }) :
+                    </dt>
 
-        <dt>
-            @Html.ActionLink("Departments", "FloorToDepartmentList", new { id = Model.Id }) :
-        </dt>
-
-        <dd>
-            @ViewBag.Departments &nbsp;  @Html.ActionLink("Add Department", "FloorToAddDepartment", new { id = Model.Id })
-        </dd>
+                    <dd>
+                        @ViewBag.Departments &nbsp;  @Html.ActionLink("Add Department", "FloorToAddDepartment", new { id = Model.Id })
+                    </dd>
 
 
-        <dt>
-            @Html.ActionLink("Wards", "FloorToWardList", new { id = Model.Id }) :
-        </dt>
+                    <dt>
+                        @Html.ActionLink("Wards", "FloorToWardList", new { id = Model.Id }) :
+                    </dt>
 
-        <dd>
-            @ViewBag.Wards &nbsp; 
-             @Html.ActionLink("Add Wards", "FloorToAddWard", new { id = Model.Id })
-        </dd>
+                    <dd>
+                        @ViewBag.Wards &nbsp;
+                        @Html.ActionLink("Add Wards", "FloorToAddWard", new { id = Model.Id })
+                    </dd>
 
-    </dl>
-</div>
-<p>
-    
-    @Html.ActionLink("Back to DashBoard", "Dashboard",new {id=ViewBag.BuildingId })
-</p>
+                </dl>
+            </div>
+            <p>
+
+                @Html.ActionLink("Back to DashBoard", "Dashboard", new { id = ViewBag.BuildingId })
+            </p>
+            </div></div></section>

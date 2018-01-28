@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 
 namespace HospitalManagement.Data
 {
-   public class Staff
+    public class Staff
     {
         [Key]
         public int Id { get; set; }
-        
+
         [Required]
         public string Name { get; set; }
+
+        public string Contact { get; set; }
+        public string ContactNo { get; set; }
+        public string ContactEmail { get; set; }
 
         [Required]
         public int Salary { get; set; }
@@ -21,16 +25,18 @@ namespace HospitalManagement.Data
         [Required]
         public string Designation { get; set; }
 
-        [Required]
+        [DataType(DataType.Date)]
         public DateTime joinningDate { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime RetireDate { get; set; }
 
         [Required]
         public string IssuedBy { get; set; }
 
-        public IList<Staff_Category> Staff_Category { get; set; }
 
+        public DateTime Updated { get; set; }
+        public string UpdatedBy { get; set; }
 
-}
+    }
 }

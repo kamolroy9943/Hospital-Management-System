@@ -23,6 +23,7 @@ namespace HospitalManagement.Data
         public  virtual ICollection<Room>Rooms { get; set; }
 
         public ICollection<Ward>Wards { get; set; }
+        public ICollection<Seat> Seats { get; set; }
         public ICollection<ICU> Icus { get; set; }
         public ICollection<Lab> Labs { get; set; }
         public ICollection<OperationTheater> OperationTheaters { get; set; }

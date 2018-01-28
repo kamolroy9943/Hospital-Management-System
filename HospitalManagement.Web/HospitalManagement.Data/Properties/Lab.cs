@@ -17,7 +17,7 @@ namespace HospitalManagement.Data
         public string Description { get; set; }
 
         public int BuildingId { get; set; }
-        public int BuildingName{get;set;}
+        public string BuildingName { get; set; }
         public Building Building { get; set; }
 
         public int FloorId { get; set; }
@@ -34,6 +34,6 @@ namespace HospitalManagement.Data
         //public IList<Building>Building { get; set; }
 
         //public IList<Floor>Floor { get; set; }
-       
+
     }
 }
