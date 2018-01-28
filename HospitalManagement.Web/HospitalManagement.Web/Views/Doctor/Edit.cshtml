@@ -8,7 +8,6 @@
 
 @using (Html.BeginForm("Edit", "Doctor", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    
 
     <div class="form-horizontal">
         <h4>Doctor</h4>
@@ -68,14 +67,18 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Departments, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+
                 This Doctor al ready Assinged to @ViewBag.Departments Departments
+
                 @*@Html.DropDownListFor(model => model.Departments, ViewBag.Departmentlist as SelectList, "-- Select Department --", new { @class = "form-control" })*@
                 @Html.ValidationMessageFor(model => model.Departments, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
+
             To Assinged new Department Select :
+
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.Departments, ViewBag.Departmentlist as SelectList, "-- Select Department --", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Departments, "", new { @class = "text-danger" })

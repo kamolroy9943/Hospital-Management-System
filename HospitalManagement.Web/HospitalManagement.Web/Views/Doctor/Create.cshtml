@@ -4,6 +4,7 @@
     ViewBag.Title = "Create";
 }
 
+
 <h2>Create</h2>
 
 @using (Html.BeginForm("Create", "Doctor", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -43,10 +44,12 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Contact, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Contact, "", new { @class = "text-danger" })
+
             </div>
         </div>
 
         <div class="form-group">
+
             @Html.LabelFor(model => model.ContactNo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ContactNo, new { htmlAttributes = new { @class = "form-control" } })
@@ -91,6 +94,7 @@
         </div>
 
         <div class="form-group">
+
             @Html.LabelFor(model => model.JoinningDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.JoinningDate, new { htmlAttributes = new { @class = "form-control" } })
@@ -103,7 +107,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+
                 <input type="file" id="ImageFile" name="ImageFile" required />
+
             </div>
         </div>
 
@@ -115,6 +121,8 @@
     </div>
 }
 
+
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+

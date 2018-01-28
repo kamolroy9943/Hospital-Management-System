@@ -1,4 +1,4 @@
-﻿using HospitalManagement.Web.Models;
+using HospitalManagement.Web.Models;
 using HospitalManagement.Data;
 using System;
 using System.Collections.Generic;
@@ -18,6 +18,7 @@ namespace HospitalManagement.Web.Controllers
         {
             DateTime tt = DateTime.Parse("11/11/2000");
             var model = _context.Doctors.Where(x => x.RetireDate == tt).ToList();
+
             var model1 = model.OrderByDescending(x => x.DoctorName).ToList();
             return View(model1);
         }
@@ -41,6 +42,7 @@ namespace HospitalManagement.Web.Controllers
         {
 
             List<Department> Departments = _context.Departments.GroupBy(x => x.Name).Select(y => y.FirstOrDefault()).ToList();
+
             ViewBag.Departmentlist = new SelectList(Departments, "Id", "Name");
 
 
@@ -49,11 +51,12 @@ namespace HospitalManagement.Web.Controllers
 
         // POST: Doctor/Create
         [HttpPost]
-        public ActionResult Create(Doctor collection, HttpPostedFileBase ImageFile)
+        public ActionResult Create(Doctor collection,HttpPostedFileBase ImageFile)
         {
             try
-            {
-                //TODO: Add insert logic here
+            {             
+                                //TODO: Add insert logic here
+
                 string filename = Path.GetFileNameWithoutExtension(ImageFile.FileName);
                 string extension = Path.GetExtension(ImageFile.FileName);
                 filename += DateTime.Now.ToString("yymmssfff") + extension;
@@ -61,6 +64,7 @@ namespace HospitalManagement.Web.Controllers
                 filename = Path.Combine(Server.MapPath("~/Images/Doctors/"), filename);
                 ImageFile.SaveAs(filename);
                 int DeptId = int.Parse(collection.Departments);
+
                 collection.Departments = _context.Departments.FirstOrDefault(x => x.Id == DeptId).Name;
                 if (int.Parse(collection.SurgeryOrMedicine) == 1)
                 {
@@ -91,6 +95,7 @@ namespace HospitalManagement.Web.Controllers
             ViewBag.Departmentlist = new SelectList(Departments, "Id", "Name");
 
             var model = _context.Doctors.Find(id);
+
             string tt = model.JoinningDate.ToString("MM/dd/yyyy");
             DateTime ttt = DateTime.Parse(tt);
             model.JoinningDate = ttt;
@@ -105,6 +110,7 @@ namespace HospitalManagement.Web.Controllers
             }
 
 
+
             ViewBag.Departments = model.Departments;
             string DeptName = model.Departments;
             return View(model);
@@ -112,6 +118,7 @@ namespace HospitalManagement.Web.Controllers
 
         // POST: Doctor/Edit/5
         [HttpPost]
+
         public ActionResult Edit(int id, Doctor collection, HttpPostedFileBase ImageFile)
         {
             try
