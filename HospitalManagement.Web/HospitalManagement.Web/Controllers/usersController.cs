@@ -35,6 +35,10 @@ namespace HospitalManagement.Controllers
                 {
                     mark = 3;
                 }
+                else if (s[0].ToString() == "TicketAdmin")
+                {
+                    mark = 4;
+                }
                 else
                 {
                     mark = 0;
@@ -72,7 +76,11 @@ namespace HospitalManagement.Controllers
                     //ViewBag.displayMenu = "Yes";
                     return RedirectToAction("Index", "LabAdmin");
                 }
-
+                if (mark == 4)
+                {
+                    //ViewBag.displayMenu = "Yes";
+                    return RedirectToAction("Index", "TicketAdmin");
+                }
                 //return View();
             }
             else
