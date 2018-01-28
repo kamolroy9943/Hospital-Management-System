@@ -25,6 +25,7 @@ namespace HospitalManagement.Data
         [Required]
         public string Designation { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime joinningDate { get; set; }
 
@@ -33,7 +34,7 @@ namespace HospitalManagement.Data
 
         [Required]
         public string IssuedBy { get; set; }
-
+        public string ImagePath { get; set; }
 
         public DateTime Updated { get; set; }
         public string UpdatedBy { get; set; }

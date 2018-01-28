@@ -12,10 +12,15 @@ namespace HospitalManagement.Data
     public class Doctor
     {
         [Key]
+
         public int Id { get; set; }
+
         [Required]
         public string DoctorName { get; set; }
         public int age { get; set; }
+
+
+        public int Salary { get; set; }
 
 
 
@@ -24,16 +29,18 @@ namespace HospitalManagement.Data
         public string ContactEmail { get; set; }
 
         public string Departments { get; set; }
-        public string Departmentslist { get; set; }
         public string Degrees { get; set; }
 
         public string SurgeryOrMedicine { get; set; }
 
 
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+
         [DataType(DataType.Date)]
         public DateTime JoinningDate { get; set; }
 
         [DataType(DataType.Date)]
+
         public DateTime RetireDate { get; set; }
 
         public DateTime Updated { get; set; }
@@ -41,6 +48,8 @@ namespace HospitalManagement.Data
 
 
         public string ImagePath { get; set; }
+
+
 
 
     }

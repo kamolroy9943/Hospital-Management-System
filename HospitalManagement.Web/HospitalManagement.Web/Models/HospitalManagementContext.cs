@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -46,7 +46,6 @@ namespace HospitalManagement.Web.Models
             modelBuilder.Entity<Floor>().HasMany(x => x.OperationTheaters).WithRequired(f => f.Floor).WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Department>().HasMany(x => x.Tickets).WithRequired(f => f.Department).WillCascadeOnDelete(false);
-
 
             base.OnModelCreating(modelBuilder);
 

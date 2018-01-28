@@ -1,26 +1,44 @@
-﻿@model HospitalManagement.Data.Staff
+﻿@model HospitalManagement.Data.Doctor
 
 @{
     ViewBag.Title = "Details";
 }
-
 <section class="content home">
     <div class="container-fluid">
         <div class="block-header">
-
             <h2>Details</h2>
 
             <div>
-                <h4>Staff</h4>
+                <h4>Doctor</h4>
                 <img src=" @Url.Content(Model.ImagePath)" width="200" height="200"
                 <hr />
+
+
                 <dl class="dl-horizontal">
+
+
                     <dt>
-                        @Html.DisplayNameFor(model => model.Name)
+                        @Html.DisplayNameFor(model => model.DoctorName)
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.Name)
+                        @Html.DisplayFor(model => model.DoctorName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.age)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.age)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Salary)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Salary)
                     </dd>
 
                     <dt>
@@ -48,44 +66,37 @@
                     </dd>
 
                     <dt>
-                        @Html.DisplayNameFor(model => model.Salary)
+                        @Html.DisplayNameFor(model => model.Departments)
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.Salary)
+                        @Html.DisplayFor(model => model.Departments)
                     </dd>
 
                     <dt>
-                        @Html.DisplayNameFor(model => model.Designation)
+                        @Html.DisplayNameFor(model => model.Degrees)
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.Designation)
+                        @Html.DisplayFor(model => model.Degrees)
                     </dd>
 
                     <dt>
-                        @Html.DisplayNameFor(model => model.joinningDate)
+                        @Html.DisplayNameFor(model => model.SurgeryOrMedicine)
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.joinningDate)
+                        @Html.DisplayFor(model => model.SurgeryOrMedicine)
                     </dd>
 
                     <dt>
-                        @Html.DisplayNameFor(model => model.RetireDate)
+                        @Html.DisplayNameFor(model => model.JoinningDate)
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.RetireDate)
+                        @Html.DisplayFor(model => model.JoinningDate)
                     </dd>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.IssuedBy)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.IssuedBy)
-                    </dd>
 
                     <dt>
                         @Html.DisplayNameFor(model => model.Updated)
@@ -103,21 +114,11 @@
                         @Html.DisplayFor(model => model.UpdatedBy)
                     </dd>
 
+
                 </dl>
             </div>
             <p>
-                @{
-                    if (ViewBag.chk == 0)
-                    {
-                        @Html.ActionLink("Back to List", "RetiredList")
-                    }
-                    else
-                    {
-                        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }); <br />
-                        @Html.ActionLink("Back to List", "Index")
-                    };
-                }
-
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
             </p>
-
-</div></div></section>
+            </div></div></section>

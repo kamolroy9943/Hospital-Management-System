@@ -59,7 +59,15 @@
                     <dd>
                         @Html.DisplayFor(model => model.DepartmentName)
                     </dd>
+                    <dt>
+                        @Html.ActionLink("Seats", "WardToSeatList", new { whereId = @ViewBag.WardId })
+                    </dt>
 
+                    <dd>
+                        @ViewBag.CountSeat  | @Html.ActionLink("Add Seat", "WardToCreate", new { whereId = @ViewBag.WardId })|
+                        @Html.ActionLink("Delete Seat", "WardToDelete", new { whereId = @ViewBag.WardId })
+
+                    </dd>
                     <dt>
                         @Html.DisplayNameFor(model => model.Updated)
                     </dt>

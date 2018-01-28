@@ -1,22 +1,23 @@
 ﻿@model HospitalManagement.Data.Doctor
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
 }
 <section class="content home">
     <div class="container-fluid">
         <div class="block-header">
+            <h2>Edit</h2>
 
-            <h2>Create</h2>
-
-            @using (Html.BeginForm("Create", "Doctor", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            @using (Html.BeginForm("Edit", "Doctor", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
-
 
                 <div class="form-horizontal">
                     <h4>Doctor</h4>
+                    <img src=" @Url.Content(Model.ImagePath)" width="200" height="200"
                     <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+
                     <div class="form-group">
                         @Html.LabelFor(model => model.DoctorName, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
@@ -37,7 +38,7 @@
                         @Html.LabelFor(model => model.Salary, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.Salary, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.age, "", new { @class = "text-danger" })
+                            @Html.ValidationMessageFor(model => model.Salary, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
@@ -46,12 +47,10 @@
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.Contact, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.Contact, "", new { @class = "text-danger" })
-
                         </div>
                     </div>
 
                     <div class="form-group">
-
                         @Html.LabelFor(model => model.ContactNo, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.ContactNo, new { htmlAttributes = new { @class = "form-control" } })
@@ -69,6 +68,19 @@
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.Departments, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+
+                            This Doctor al ready Assinged to @ViewBag.Departments Departments
+
+                            @*@Html.DropDownListFor(model => model.Departments, ViewBag.Departmentlist as SelectList, "-- Select Department --", new { @class = "form-control" })*@
+                            @Html.ValidationMessageFor(model => model.Departments, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        To Assinged new Department Select :
+
                         <div class="col-md-10">
                             @Html.DropDownListFor(model => model.Departments, ViewBag.Departmentlist as SelectList, "-- Select Department --", new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.Departments, "", new { @class = "text-danger" })
@@ -95,11 +107,11 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
 
+                    <div class="form-group">
                         @Html.LabelFor(model => model.JoinningDate, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.JoinningDate, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.JoinningDate, "{0:d}", new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.JoinningDate, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -107,25 +119,21 @@
 
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
+                        new Image :
                         <div class="col-md-10">
-
-                            <input type="file" id="ImageFile" name="ImageFile" required />
-
+                            <input type="file" id="ImageFile" name="ImageFile" />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Create" class="btn btn-default" />
+                            <input type="submit" value="Save" class="btn btn-default" />
                         </div>
                     </div>
                 </div>
             }
 
-
             <div>
                 @Html.ActionLink("Back to List", "Index")
             </div>
-
             </div></div></section>
