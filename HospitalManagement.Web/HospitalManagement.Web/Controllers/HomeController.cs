@@ -1,4 +1,4 @@
-﻿using HospitalManagement.Web.Models;
+using HospitalManagement.Web.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
@@ -13,11 +13,13 @@ namespace HospitalManagement.Web.Controllers
     {
         public ActionResult Index()
         {
+
             if (User.Identity.IsAuthenticated)
             {
                 return RedirectToAction("Check");
             }
-            return View();
+
+                        return View();
         }
         //..........................................................................
 
