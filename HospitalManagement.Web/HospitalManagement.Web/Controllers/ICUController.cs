@@ -22,11 +22,35 @@ namespace HospitalManagement.Web.Controllers
         // GET: ICU/Details/5
         public ActionResult Details(int id)
         {
+            var IcuSeat = _context.Seats.Where(x => x.Where == "ICU").ToList();
+            var CountSeat = IcuSeat.Count(x => x.WhereID == id);
+            ViewBag.IcuId = id;
+            ViewBag.CountSeat = CountSeat;
             ICU model = _context.Icu.Find(id);
             return View(model);
         }
+        public ActionResult ICUToDelete(int whereId)
+        {
+            return RedirectToAction("Delete", "Seat", new { where = "ICU", whereId = whereId });
+        }
+
+        public ActionResult ICUToSeatList(int whereId)
+        {
+
+            return RedirectToAction("FromWhereList", "Seat", new { where = "ICU", whereId = whereId });
+        }
+
+        public ActionResult ICUToCreate(int whereId)
+        {
+            return RedirectToAction("WhereCreate", "Seat", new { where = "ICU", whereId = whereId });
+        }
+
         public ActionResult FromBuildingDetails(int id)
         {
+            var IcuSeat = _context.Seats.Where(x => x.Where == "ICU").ToList();
+            var CountSeat = IcuSeat.Count(x => x.WhereID == id);
+            ViewBag.IcuId = id;
+            ViewBag.CountSeat = CountSeat;
             ICU model = _context.Icu.FirstOrDefault(x => x.BuildingId == id);
             return View(model);
         }

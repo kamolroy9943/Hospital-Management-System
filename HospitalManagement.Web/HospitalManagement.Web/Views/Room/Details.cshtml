@@ -43,7 +43,15 @@
                     <dd>
                         @Html.DisplayFor(model => model.FloorNumber)
                     </dd>
+                    <dt>
+                        @Html.ActionLink("Seats", "RoomToSeatList", new { whereId = @ViewBag.RoomId })
+                    </dt>
 
+                    <dd>
+                        @ViewBag.CountSeat  | @Html.ActionLink("Add Seat", "RoomToCreate", new { whereId = @ViewBag.RoomId })|
+                        @Html.ActionLink("Delete Seat", "RoomToDelete", new { whereId = @ViewBag.RoomId })
+
+                    </dd> 
                     <dt>
                         @Html.DisplayNameFor(model => model.Updated)
                     </dt>
