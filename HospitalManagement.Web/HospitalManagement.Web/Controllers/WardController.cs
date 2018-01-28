@@ -48,9 +48,29 @@ namespace HospitalManagement.Web.Controllers
         // GET: Ward/Details/5
         public ActionResult Details(int id)
         {
+            var Seat = _context.Seats.Where(x => x.Where == "Ward").ToList();
+            var CountSeat = Seat.Count(x => x.WhereID == id);
+            ViewBag.WardId = id;
+            ViewBag.CountSeat = CountSeat;
+
             Ward ward = _context.Wards.Find(id);
             ViewBag.BuildingName = _context.Building.FirstOrDefault(x => x.Id == ward.BuildingId).BuildingName;
             return View(ward);
+        }
+
+        public ActionResult WardToDelete(int whereId)
+        {
+            return RedirectToAction("Delete", "Seat", new { where = "Ward", whereId = whereId });
+        }
+
+        public ActionResult WardToSeatList(int whereId)
+        {
+            return RedirectToAction("FromWhereList", "Seat", new { where = "Ward", whereId = whereId });
+        }
+
+        public ActionResult WardToCreate(int whereId)
+        {
+            return RedirectToAction("WhereCreate", "Seat", new { where = "Ward", whereId = whereId });
         }
 
         // GET: Ward/Create

@@ -53,7 +53,15 @@
                     <dd>
                         @ViewBag.OTs  &nbsp;  @Html.ActionLink("Add Operation Theater", "BuildingToAddOperationTheater", new { id = Model.Id })
                     </dd>
-
+                    </dd>
+                    <dt>
+                        Seats @*@Html.ActionLink("Seats", "", new { id = Model.Id })*@ :
+                    </dt>
+                    <dd>
+                        @ViewBag.Seats || Add Seats in ->   &nbsp;@Html.ActionLink("ICU", "BuildingToWhere", new { id = Model.Id, where = "ICU" }) ||
+                        @Html.ActionLink("Room", "BuildingToWhere", new { id = Model.Id, where = "Room" })||
+                        @Html.ActionLink("Ward", "BuildingToWhere", new { id = Model.Id, where = "Ward" })
+                    </dd>
 
                     <dt>
                         @Html.ActionLink("Departments", "BuildingToDepartmentList", new { id = Model.Id }) :
