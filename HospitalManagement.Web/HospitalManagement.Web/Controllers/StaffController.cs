@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
 
 namespace HospitalManagement.Web.Controllers
 {
@@ -39,7 +40,7 @@ namespace HospitalManagement.Web.Controllers
             ViewBag.CategoryList = new SelectList(Categoryl, "CategoryName", "CategoryName");
 
             DateTime tt = DateTime.Parse("11/11/2000");
-            var model = _context.Staffs.Where(x => x.RetireDate == tt).ToList();
+            var model = _context.Staffs.Where(x => x.RetireDate == tt).OrderByDescending(z=>z.Name).ToList();
             return View(model);
         }
 
@@ -47,7 +48,7 @@ namespace HospitalManagement.Web.Controllers
         {
 
             _context.Configuration.ProxyCreationEnabled = false;
-            List<Staff> List = _context.Staffs.Where(x => x.Designation == Category).ToList();
+            List<Staff> List = _context.Staffs.Where(x => x.Designation == Category).OrderByDescending(z => z.Name).ToList();
             return Json(List, JsonRequestBehavior.AllowGet);
         }
 
@@ -55,7 +56,7 @@ namespace HospitalManagement.Web.Controllers
         public ActionResult RetiredList()
         {
             DateTime tt = DateTime.Parse("11/11/2000");
-            var model = _context.Staffs.Where(x => x.RetireDate != tt).ToList();
+            var model = _context.Staffs.Where(x => x.RetireDate != tt).OrderByDescending(z => z.Name).ToList();
             return View(model);
         }
 
@@ -80,11 +81,19 @@ namespace HospitalManagement.Web.Controllers
 
         // POST: Staff/Create
         [HttpPost]
-        public ActionResult Create(Staff collection)
+        public ActionResult Create(Staff collection,HttpPostedFileBase ImageFile)
         {
             try
             {
                 // TODO: Add insert logic here
+                string filename = Path.GetFileNameWithoutExtension(ImageFile.FileName);
+                string extension = Path.GetExtension(ImageFile.FileName);
+                filename += DateTime.Now.ToString("yymmssfff") + extension;
+                collection.ImagePath = "~/Images/Staffs/" + filename;
+                filename = Path.Combine(Server.MapPath("~/Images/Staffs/"), filename);
+                ImageFile.SaveAs(filename);
+
+
                 collection.Updated = DateTime.Today;
                 collection.UpdatedBy = User.Identity.Name;
 
@@ -112,23 +121,33 @@ namespace HospitalManagement.Web.Controllers
 
         // POST: Staff/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Staff collection)
+        public ActionResult Edit(int id, Staff collection,HttpPostedFileBase ImageFile)
         {
             try
             {
                 // TODO: Add update logic here
-                Staff Staff = new Staff();
-                Staff.Name = collection.Name;
-                Staff.Contact = collection.Contact;
-                Staff.ContactNo = collection.ContactNo;
-                Staff.ContactEmail = collection.ContactEmail;
-                Staff.Salary = collection.Salary;
-                Staff.Designation = collection.Designation;
-                Staff.joinningDate = collection.joinningDate;
-                Staff.Updated = DateTime.Today;
-                Staff.UpdatedBy = User.Identity.Name;
+                Staff Staff = _context.Staffs.Find(id);
 
-                _context.Entry(Staff).State = System.Data.Entity.EntityState.Modified;
+                if (ImageFile != null)
+                {
+                    string filename = Path.GetFileNameWithoutExtension(ImageFile.FileName);
+                    string extension = Path.GetExtension(ImageFile.FileName);
+                    filename += DateTime.Now.ToString("yymmssfff") + extension;
+                    collection.ImagePath = "~/Images/Staffs/" + filename;
+                    filename = Path.Combine(Server.MapPath("~/Images/Staffs/"), filename);
+                    ImageFile.SaveAs(filename);
+                }
+                else
+                {
+                    collection.ImagePath = _context.Staffs.FirstOrDefault(x => x.Id == id).ImagePath;
+                }
+                DateTime tt = DateTime.Parse("11/11/2000");
+                collection.RetireDate = tt;
+                collection.Updated = DateTime.Today;
+                collection.UpdatedBy = User.Identity.Name;
+
+                _context.Staffs.Remove(Staff);_context.SaveChanges();
+                _context.Staffs.Add(collection);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -154,7 +173,7 @@ namespace HospitalManagement.Web.Controllers
                 // TODO: Add delete logic here
                 Staff staff = _context.Staffs.Find(id);
                 staff.RetireDate = collection.RetireDate;
-                staff.Updated = DateTime.Now;
+                staff.Updated = DateTime.Today;
                 staff.UpdatedBy = User.Identity.Name;
 
                 _context.Entry(staff).State = System.Data.Entity.EntityState.Modified;

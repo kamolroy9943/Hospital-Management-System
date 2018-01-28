@@ -34,6 +34,7 @@
                     <th>
                         @Html.DisplayNameFor(model => model.RetireDate)
                     </th>
+                    <th>Image</th>
                     <th>
                         @Html.DisplayNameFor(model => model.IssuedBy)
                     </th>
@@ -72,6 +73,9 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.RetireDate)
+                        </td>
+                        <td>
+                            <img src=" @Url.Content(item.ImagePath)" width="50" height="50"
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.IssuedBy)
