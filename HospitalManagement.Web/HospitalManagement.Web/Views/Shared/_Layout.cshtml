@@ -8,7 +8,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>:: Modern - Hospital Admin ::</title>
+    <title>:: Modern - Hospita::</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/icon.css")" rel="stylesheet" type="text/css" />
@@ -20,7 +20,7 @@
 
 
     <!-- Dropzone Css -->
-    <link href="@Url.Content("~/Content/dropzone.css")" rel="stylesheet"/>
+    <link href="@Url.Content("~/Content/dropzone.css")" rel="stylesheet" />
     <!-- Bootstrap Material Datetime Picker Css -->
     <link href="@Url.Content("~/Content/bootstrap-material-datetimepicker.css")" rel="stylesheet" />
     <!-- Wait Me Css -->
@@ -30,7 +30,9 @@
 
 
 
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 
@@ -94,7 +96,7 @@
     <div id="morphsearch" class="morphsearch">
         <form class="morphsearch-form">
             <div class="form-group m-0">
-                <input value="" type="search" placeholder="Explore Swift..." class="form-control morphsearch-input" />
+                <input value="" type="search" placeholder="Explore Modern Hospital..." class="form-control morphsearch-input" />
                 <button class="morphsearch-submit" type="submit">Search</button>
             </div>
         </form>
@@ -320,19 +322,31 @@
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
 
+                    @*<li class="active open">
+            <a href="@Url.Action("Index","Home")" class="toggled waves-effect waves-block">
+                <i class="zmdi zmdi-home"></i>
+
+
+                <span>Dashboard</span>
+            </a>
+        </li>*@
+
                     <li class="active open">
-                        <a href="@Url.Action("Index","Home")" class="toggled waves-effect waves-block">
-                            <i class="zmdi zmdi-home"></i>
-
-
-                            <span>Dashboard</span>
-                        </a>
+                        <a href="javascript:void(0);" class="menu-toggle"><span class="glyphicon glyphicon-home"></span><span>Dashboard</span> </a>
+                        <ul class="ml-menu">
+                            <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                            <li><a href="@Url.Action("Index","SuperAdmin")">SuperAdmin</a></li>
+                        </ul>
                     </li>
+
+
+
+
 
                     @*<li class="active open"><a href="@Url.Action("Index","Home")"><i class="zmdi zmdi-home"></i><span>Dashboad</span></a></li>*@
 
                     <li>
-                        <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-copy"></i><span>Account</span> </a>
+                        <a href="javascript:void(0);" class="menu-toggle">  <span class="glyphicon glyphicon-user"></span><span>Account</span> </a>
                         <ul class="ml-menu">
                             @*<li> <a href="@Url.Action("Login","Account")">Login</a> </li>*@
                             @Html.Partial("_LoginPartial")
@@ -340,29 +354,39 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Building</span> </a>
+                        <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-home"></i><span>Building</span> </a>
                         <ul class="ml-menu">
                             <li><a href="@Url.Action("Create","Building")">Building Add</a></li>
                             <li><a href="@Url.Action("Index","Building")">Building Details</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
+                        <a href="javascript:void(0);" class="menu-toggle"><span class="glyphicon glyphicon-check"></span><span>Appointment</span> </a>
                         <ul class="ml-menu">
                             <li><a href="doctor-schedule.html">Doctor Schedule</a></li>
                             <li><a href="book-appointment.html">Book Appointment</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span><span class="glyphicons glyphicons-stethoscope"></span>Doctors</span> </a>
+                        <a href="javascript:void(0);" class="menu-toggle">  <span class="glyphicon glyphicon-user"></span><span>Doctors</span> </a>
                         <ul class="ml-menu">
                             <li><a href="doctors.html">All Doctors</a></li>
                             <li><a href="add-doctor.html">Add Doctor</a></li>
                             <li><a href="profile.html">Doctor Profile</a></li>
                         </ul>
                     </li>
+
                     <li>
-                        <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-o"></i><span>Patients</span> </a>
+                        <a href="javascript:void(0);" class="menu-toggle">  <span class="glyphicon glyphicon-user"></span><span>Nurses</span> </a>
+                        <ul class="ml-menu">
+                            <li><a href="doctors.html">All Nurse</a></li>
+                            <li><a href="add-doctor.html">Add Nurse</a></li>
+                            <li><a href="profile.html">Nurse Profile</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">  <span class="glyphicon glyphicon-user"></span><span>Patients</span> </a>
                         <ul class="ml-menu">
                             <li><a href="patients.html">All Patients</a></li>
                             <li><a href="add-patient.html">Add Patient</a></li>
@@ -622,7 +646,7 @@
     <div class="color-bg"></div>
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap-luman")
+    @*@Scripts.Render("~/bundles/bootstrap-luman")*@
     @RenderSection("scripts", required: false)
     <!-- Jquery Core Js -->
     <script src="~/Scripts/"></script> <!-- Lib Scripts Plugin Js -->
