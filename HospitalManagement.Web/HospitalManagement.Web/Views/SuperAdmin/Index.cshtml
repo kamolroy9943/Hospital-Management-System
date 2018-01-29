@@ -1,36 +1,102 @@
 ﻿
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Super admin Arena";
 }
 
-<<<<<<< HEAD
-=======
 
-<h2>Index  Super admin</h2>
-<div class="float-md-right">
     
 <section class="content home">
     <div class="container-fluid">
         <div class="block-header">
 
-            <h2>Index  Super admin</h2>
-            <div class="float-md-right">
-                @Html.ActionLink("Register", "Register", "Account", null, new { @class = "btn btn-primary btn-large" });<br><br>
-                @Html.ActionLink("Building", "Dashboard", "Building", null, new { @class = "btn btn-primary btn-large" });
-                <br><br>
-                @Html.ActionLink("Department", "Create", "Department", null, new { @class = "btn btn-primary btn-large" });
-                <br><br>
-                @Html.ActionLink("Ticket Counters", "Index", "TicketCounter", null, new { @class = "btn btn-primary btn-large" });
-                <br><br>
-                @Html.ActionLink("ICU", "Index", "ICU", null, new { @class = "btn btn-primary btn-large" });
-                <br><br>
-                @Html.ActionLink("Lab", "Index", "Lab", null, new { @class = "btn btn-primary btn-large" }); | | | |
-                @Html.ActionLink("Staffs", "Index", "Staff", null, new { @class = "btn btn-primary btn-large" });
-                <br><br>
-                @Html.ActionLink("Doctors", "Index", "Doctor", null, new { @class = "btn btn-primary btn-large" });
+            <h2>Super admin Arena</h2>
 
-            </div>
-            </div>
+            @Html.ActionLink("Register", "Register", "Account", null, new { @class = "btn btn-primary btn-large" })
+
+            </br>
+            <p>Here Super Admin can add another Admin.........</p>
+            <a href='@Url.Action("Register", "Account")'>
+                <img src='@Url.Content("~/Images/Admins/register.jpg")' style="height:400px;width:auto" />
+            </a>
+
+
+
+
+            </br>
+
+
+            @Html.ActionLink("Building", "Dashboard", "Building", null, new { @class = "btn btn-primary btn-large" })
+
+            <p>Here you can know about Hospital building, rooms,ward,Ticket Counter....etc.........</p>
+            <a href='@Url.Action("Index", "Building")'>
+                <img src='@Url.Content("~/Images/Buildings/building.jpg")' style="height:400px;width:800px" />
+            </a>
+
+            </br>
+
+
+
+            @Html.ActionLink("Department", "Create", "Department", null, new { @class = "btn btn-primary btn-large" })
+
+            </br>
+            <p>Here you can know about Hospital all Departments.........</p>
+            <a href='@Url.Action("Create", "Department")'>
+                <img src='@Url.Content("~/Images/Departments/department.jpg")' style="height:400px;width:800px" />
+            </a>
+
+
+            </br>
+            @Html.ActionLink("Ticket Counters", "Index", "TicketCounter", null, new { @class = "btn btn-primary btn-large" })
+
+            </br>
+            <p>Here you can know about Hospital all Departments.........</p>
+            <a href='@Url.Action("Index", "TicketCounter")'>
+                <img src='@Url.Content("~/Images/Departments/ticket.jpg")' style="height:400px;width:800px" />
+            </a>
+
+
+
+            </br>
+            @Html.ActionLink("ICU", "Index", "ICU", null, new { @class = "btn btn-primary btn-large" })
+
+
+            </br>
+            <p>Here you can know about ICU.........</p>
+            <a href='@Url.Action("Index", "ICU")'>
+                <img src='@Url.Content("~/Images/Departments/icu.jpg")' style="height:400px;width:800px" />
+            </a>
+
+
+
+            </br>
+            @Html.ActionLink("Lab", "Index", "Lab", null, new { @class = "btn btn-primary btn-large" })
+
+            </br>
+            <p>Here you can know about Lab.........</p>
+            <a href='@Url.Action("Index", "Lab")'>
+                <img src='@Url.Content("~/Images/Departments/lab.jpg")' style="height:400px;width:800px" />
+            </a>
+
+
+
+            </br>
+            @Html.ActionLink("Staffs", "Index", "Staff", null, new { @class = "btn btn-primary btn-large" })
+
+            </br>
+            <p>Here you can know about staff.........</p>
+            <a href='@Url.Action("Index", "Staff")'>
+                <img src='@Url.Content("~/Images/Departments/staff.jpg")' style="height:400px;width:800px" />
+            </a>
+            </br>
+            @Html.ActionLink("Doctors", "Index", "Doctor", null, new { @class = "btn btn-primary btn-large" })
+
+            </br>
+            </br>
+            <p>Here you can know about Doctor.........</p>
+            <a href='@Url.Action("Index", "Doctor")'>
+                <img src='@Url.Content("~/Images/Departments/doctor.jpg")' style="height:400px;width:800px" />
+            </a>
+        </div>
         </div>
     </section>
