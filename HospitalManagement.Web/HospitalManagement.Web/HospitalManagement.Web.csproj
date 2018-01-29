@@ -378,6 +378,8 @@
     <Content Include="Views\Seat\WhereToCreate.cshtml" />
     <Content Include="Views\Seat\Delete.cshtml" />
     <Content Include="Views\Staff\Delete.cshtml" />
+    <Content Include="Views\SuperAdmin\List.cshtml" />
+    <Content Include="Views\SuperAdmin\Blocking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

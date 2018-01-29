@@ -29,5 +29,7 @@ namespace HospitalManagement.Web.Models
         {
             return new ApplicationDbContext();
         }
+
+        
     }
 }
