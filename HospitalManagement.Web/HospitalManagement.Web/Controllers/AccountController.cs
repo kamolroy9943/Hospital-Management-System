@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HospitalManagement.Web.Models;
 using HospitalManagement.Web;
+using HospitalManagement.Data;
 
 namespace HospitalManagement.Controllers
 {
@@ -19,6 +20,7 @@ namespace HospitalManagement.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         ApplicationDbContext context;
+        HospitalManagementContext _context = new HospitalManagementContext();
         public AccountController()
         {
             context = new ApplicationDbContext();
@@ -72,6 +74,12 @@ namespace HospitalManagement.Controllers
         {
             if (!ModelState.IsValid)
             {
+                return View(model);
+            }
+            string Check = _context.Admins.FirstOrDefault(x => x.Name == model.UserName).IsBlocked;
+            if(Check=="Blocked")
+            {
+                ViewBag.BlockMsg = "Blocked";
                 return View(model);
             }
 
@@ -160,7 +168,7 @@ namespace HospitalManagement.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
@@ -169,6 +177,11 @@ namespace HospitalManagement.Controllers
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
                     //Assign Role to user Here   
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
+                    //................
+                    AdminRole Admin = new AdminRole();
+                    Admin.Name = model.UserName;Admin.Role = model.UserRoles;Admin.IsBlocked = "Active";
+                    Admin.Updated = DateTime.Today;Admin.UpdatedBy = User.Identity.Name;
+                    _context.Admins.Add(Admin);_context.SaveChanges();
                     //Ends Here 
                     return RedirectToAction("Index", "SuperAdmin");
                 }

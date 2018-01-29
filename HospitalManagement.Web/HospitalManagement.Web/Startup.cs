@@ -1,8 +1,10 @@
 ﻿using HospitalManagement.Web.Models;
+using HospitalManagement.Data;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Owin;
+using System;
 
 [assembly: OwinStartupAttribute(typeof(HospitalManagement.Web.Startup))]
 namespace HospitalManagement.Web
@@ -27,7 +29,7 @@ namespace HospitalManagement.Web
             // In Startup iam creating first Admin Role and creating a default Admin User     
             if (!roleManager.RoleExists("SuperAdmin"))
             {
-
+                HospitalManagementContext _context = new HospitalManagementContext();
                 // first we create Admin rool    
                 var role = new IdentityRole();
                 role.Name = "SuperAdmin";
@@ -40,6 +42,13 @@ namespace HospitalManagement.Web
                 user.Email = "Super@gmail.com";
 
                 string userPWD = "abc123";
+                AdminRole Admins = new AdminRole();
+                Admins.Name = "Super";
+                Admins.Role = "SuperAdmin";
+                Admins.Updated = DateTime.Today;
+                Admins.UpdatedBy = "Origin Super Admin";
+                Admins.IsBlocked = "Active";
+                _context.Admins.Add(Admins); _context.SaveChanges();
 
                 var chkUser = UserManager.Create(user, userPWD);
 

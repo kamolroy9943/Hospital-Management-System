@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\AdminRole.cs" />
     <Compile Include="Properties\ICU.cs" />
     <Compile Include="Properties\OperationTheater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

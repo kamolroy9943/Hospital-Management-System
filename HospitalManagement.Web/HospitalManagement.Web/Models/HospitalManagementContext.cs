@@ -10,7 +10,7 @@ namespace HospitalManagement.Web.Models
 {
     public class HospitalManagementContext : DbContext
     {
-
+        public DbSet<AdminRole> Admins { get; set; }
         public DbSet<Building> Building { get; set; }
         public DbSet<ICU> Icu { get; set; }
         public DbSet<Floor> Floors { get; set; }
