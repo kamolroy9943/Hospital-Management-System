@@ -54,9 +54,71 @@
                             @Html.DisplayFor(modelItem => item.UpdatedBy)
                         </td>
                         <td>
+                            @{
+                                if (item.Role == "FloorAdmin")
+                                {
+                                    if (item.IsAssigned == "Not")
+                                    {
+                                        @Html.ActionLink("Assign to a Floor |", "AssignToFloor", new { id = item.Id })
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Update / Change Floor |", "AssignToFloor", new { id = item.Id })
+                                    }
+                                }
+                                else if (item.Role == "LabAdmin")
+                                {
+                                    if (item.IsAssigned == "Not")
+                                    {
+                                        @Html.ActionLink("Assign to a Lab |", "AssignToLab", new { id = item.Id })
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Update / Change Lab |", "AssignToFloor", new { id = item.Id })
+                                    }
+                                }
+                                else if (item.Role == "TicketAdmin")
+                                {
+                                    if (item.IsAssigned == "Not")
+                                    {
+                                        @Html.ActionLink("Assign to a Ticket Counter |", "AssignToCounter", new { id = item.Id })
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Update / Change Ticket Counter |", "AssignToCounter", new { id = item.Id })
+                                    }
+                                }
+                                else if (item.Role == "SuperAdmin")
+                                {
 
-                            @Html.ActionLink("Assign to a Post", "Assignning", new { id = item.Id }) |
-                            @Html.ActionLink("Block thid Admin", "Blocking", new { id = item.Id })
+                                    
+
+                                }
+                                else if (item.Role == "BillAdmin")
+                                {
+                                    if (item.IsAssigned == "Not")
+                                    {
+                                        @Html.ActionLink("Assign to a Bill Counter |", "AssignToBill", new { id = item.Id })
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Update / Change Bill Counter |", "AssignToBill", new { id = item.Id })
+                                    }
+                                }
+
+
+                            }
+                            @{
+                                if (item.IsBlocked == "Active")
+                                {
+                                    @Html.ActionLink("Block this Admin", "Blocking", new { id = item.Id })
+                                }
+                                else
+                                {
+                                    @Html.ActionLink("Active this Admin", "Blocking", new { id = item.Id })
+                                }
+                            }
+                           
                         </td>
                     </tr>
                 }
