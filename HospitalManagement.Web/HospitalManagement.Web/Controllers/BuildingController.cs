@@ -49,10 +49,22 @@ namespace HospitalManagement.Web.Controllers
             ViewBag.CountIcu = _context.Icu.Count(x => x.BuildingId == id);
             if (ViewBag.CountIcu != 0) { ViewBag.IcuName = _context.Icu.FirstOrDefault(x => x.BuildingId == id).ICUName; }
 
+            int CounLab = _context.Labs.Count(x => x.BuildingId == id);
+            ViewBag.Labs = CounLab;
+
             int CountSeat = _context.Seats.Count(x => x.BuildingId == id);
             ViewBag.Seats = CountSeat;
             Building B = _context.Building.Find(id);
             return View(B);
+        }
+        public ActionResult BuildingToLabDash(int id)
+        {
+            return RedirectToAction("LabDash", "Lab", new { where = "Building", id = id });
+        }
+
+        public ActionResult BuildingToAddLab(int id)
+        {
+            return RedirectToAction("FromCreate", "Lab", new { where = "Building", id = id });
         }
 
         public ActionResult BuildingToWhere(int id, string where)

@@ -218,6 +218,7 @@
     <Compile Include="Controllers\LabController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OperationTheaterController.cs" />
+    <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\SeatController.cs" />
     <Compile Include="Controllers\StaffCategoryController.cs" />
@@ -517,6 +518,8 @@
     <Content Include="Views\TicketAdmin\ShowTodays.cshtml" />
     <Content Include="Views\SuperAdmin\AssignToFloor.cshtml" />
     <Content Include="Views\SuperAdmin\AssignToCounter.cshtml" />
+    <Content Include="Views\SuperAdmin\AssignToLab.cshtml" />
+    <Content Include="Views\FloorAdmin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -524,7 +527,7 @@
     <Folder Include="Images\Others\" />
     <Folder Include="Images\Patients\" />
     <Folder Include="Images\Staffs\" />
-    <Folder Include="Views\FloorAdmin\" />
+    <Folder Include="Views\Patient\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

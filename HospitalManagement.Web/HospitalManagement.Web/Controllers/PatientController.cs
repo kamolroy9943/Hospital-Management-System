@@ -1,6 +1,4 @@
-﻿using HospitalManagement.Web.Models;
-using HospitalManagement.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,30 +6,27 @@ using System.Web.Mvc;
 
 namespace HospitalManagement.Web.Controllers
 {
-    public class FloorAdminController : Controller
+    public class PatientController : Controller
     {
-        HospitalManagementContext _contex = new HospitalManagementContext();
-        
-        // GET: FloorAdmin
+        // GET: Patient
         public ActionResult Index()
         {
-            
             return View();
         }
 
-        // GET: FloorAdmin/Details/5
+        // GET: Patient/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: FloorAdmin/Create
+        // GET: Patient/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: FloorAdmin/Create
+        // POST: Patient/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -47,13 +42,13 @@ namespace HospitalManagement.Web.Controllers
             }
         }
 
-        // GET: FloorAdmin/Edit/5
+        // GET: Patient/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: FloorAdmin/Edit/5
+        // POST: Patient/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -69,13 +64,13 @@ namespace HospitalManagement.Web.Controllers
             }
         }
 
-        // GET: FloorAdmin/Delete/5
+        // GET: Patient/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: FloorAdmin/Delete/5
+        // POST: Patient/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

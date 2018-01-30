@@ -136,5 +136,46 @@ namespace Demo_Hospital.Controllers
         }
 
 
+        public ActionResult AssignToLab(int id)
+        {
+            List<Building> Buildings = _context.Building.ToList();
+            ViewBag.Buildinglist = new SelectList(Buildings, "Id", "BuildingName");
+
+            var model = _context.Admins.Find(id);
+            return View(model);
+        }
+        public JsonResult GetLabList(int BuildingId)
+        {
+
+            _context.Configuration.ProxyCreationEnabled = false;
+            List<Lab> List = _context.Labs.Where(x => x.BuildingId == BuildingId).ToList();
+            return Json(List, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult AssignToLab(int id, AdminRole collection)
+        {
+            try
+            {
+                AdminRole Admin = _context.Admins.Find(id);
+                Admin.BuildingId = collection.BuildingId;
+                Admin.PostId = collection.PostId;
+                string BuildingName = _context.Building.FirstOrDefault(x => x.Id == collection.BuildingId).BuildingName;
+                int CounterNumber = _context.TicketCounter.FirstOrDefault(x => x.Id == collection.PostId).Number;
+                Admin.IsAssigned = BuildingName + "( " + CounterNumber.ToString() + " )";
+                Admin.Updated = DateTime.Today;
+                Admin.UpdatedBy = User.Identity.Name;
+
+                _context.Entry(Admin).State = System.Data.Entity.EntityState.Modified;
+                _context.SaveChanges();
+                return RedirectToAction("List");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
     }
 }
