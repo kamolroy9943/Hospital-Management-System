@@ -78,6 +78,13 @@
                     <dd>
                         @ViewBag.Wards &nbsp;  @Html.ActionLink("Add Wards", "BuildingToAddWard", new { id = Model.Id })
                     </dd>
+                    <dt>
+                        @Html.ActionLink("Labs", "BuildingToLabDash", new { id = Model.Id }) :
+                    </dt>
+
+                    <dd>
+                        @ViewBag.Labs &nbsp;  @Html.ActionLink("Add Labs", "BuildingToAddLab", new { id = Model.Id })
+                    </dd>
 
                     <dt>
                         @Html.ActionLink("Ticket Counters", "BuildingToCounterList", new { id = Model.Id }) :

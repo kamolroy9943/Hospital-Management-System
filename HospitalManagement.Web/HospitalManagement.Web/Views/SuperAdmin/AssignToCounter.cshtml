@@ -1,0 +1,110 @@
+﻿@model HospitalManagement.Data.AdminRole
+
+@{
+    ViewBag.Title = "AssignToFloor";
+}
+<section class="content home">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>AssignToFloor</h2>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>AdminRole</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+
+                            @Html.DisplayFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DisplayFor(model => model.Role, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.IsBlocked, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DisplayFor(model => model.IsBlocked, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.IsBlocked, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.IsAssigned, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DisplayFor(model => model.IsAssigned, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.IsAssigned, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="=form-group">
+                        @Html.DropDownListFor(model => model.BuildingId, ViewBag.Buildinglist as SelectList, "-- Select Building--", new { @class = "form-control" })
+                    </div>
+
+                    <div class="=form-group">
+                        @Html.DropDownListFor(model => model.PostId, new SelectList(" "), "-- Select Ticket Counter --", new { @class = "form-control" })
+                    </div>
+                    @*<div class="form-group">
+                            @Html.LabelFor(model => model.BuildingId, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.BuildingId, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.BuildingId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PostId, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.PostId, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PostId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>*@
+
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Save" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+                $(document).ready(function () {
+                    $("#BuildingId").change(function () {
+
+                        $.get("/SuperAdmin/GetCounterList", { BuildingId: $("#BuildingId").val() }, function (data) {
+                            $("#PostId").empty();
+                            $.each(data, function (index, row) {
+                                $("#PostId").append("<option value='" + row.Id + "'>" + row.Number + "</option")
+
+                            });
+
+                        });
+
+                    })
+
+                });
+
+</script>

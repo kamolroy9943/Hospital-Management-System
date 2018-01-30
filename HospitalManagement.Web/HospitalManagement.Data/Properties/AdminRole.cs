@@ -18,6 +18,11 @@ namespace HospitalManagement.Data
 
         public string IsBlocked { get; set; }
 
+        public string IsAssigned { get; set; }
+
+        public int BuildingId { get; set; }
+        public int PostId { get; set; }
+
         public DateTime Updated { get; set; }
         public string UpdatedBy { get; set; }
     }

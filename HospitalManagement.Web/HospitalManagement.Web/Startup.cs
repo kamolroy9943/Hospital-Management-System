@@ -48,6 +48,9 @@ namespace HospitalManagement.Web
                 Admins.Updated = DateTime.Today;
                 Admins.UpdatedBy = "Origin Super Admin";
                 Admins.IsBlocked = "Active";
+                Admins.IsAssigned = "Control Room";
+                Admins.BuildingId = 0;
+                Admins.PostId = 0;
                 _context.Admins.Add(Admins); _context.SaveChanges();
 
                 var chkUser = UserManager.Create(user, userPWD);

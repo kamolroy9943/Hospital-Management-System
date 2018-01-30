@@ -1,36 +1,168 @@
-﻿
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Super admin Arena";
 }
 
 
-
-<h2>Index  Super admin</h2>
-<div class="float-md-right">
     
 <section class="content home">
     <div class="container-fluid">
         <div class="block-header">
 
-            <h2>Index  Super admin</h2>
-            <div class="float-md-right">
-                @Html.ActionLink("Register", "Register", "Account", null, new { @class = "btn btn-primary btn-large" });<br><br>
-                @Html.ActionLink("Building", "Dashboard", "Building", null, new { @class = "btn btn-primary btn-large" });
-                <br><br>
-                @Html.ActionLink("Department", "Create", "Department", null, new { @class = "btn btn-primary btn-large" });
-                <br><br>
-                @Html.ActionLink("Ticket Counters", "Index", "TicketCounter", null, new { @class = "btn btn-primary btn-large" });
-                <br><br>
-                @Html.ActionLink("ICU", "Index", "ICU", null, new { @class = "btn btn-primary btn-large" });
-                <br><br>
-                @Html.ActionLink("Lab", "Index", "Lab", null, new { @class = "btn btn-primary btn-large" }); | | | |
-                @Html.ActionLink("Staffs", "Index", "Staff", null, new { @class = "btn btn-primary btn-large" });
-                <br><br>
-                @Html.ActionLink("Doctors", "Index", "Doctor", null, new { @class = "btn btn-primary btn-large" });
-                <br><br>
-                @Html.ActionLink("Admins", "List", "SuperAdmin", null, new { @class = "btn btn-primary btn-large" });
+
+            <h2>Super admin Arena</h2>
+
+
+
+            <div class="row clearfix">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <div class="form-line">
+
+                            <p>Here Super Admin can add another Admin.........</p>
+                            <a href='@Url.Action("Register", "Account")'>
+                                <img src='@Url.Content("~/Images/Admins/register.jpg")' style="height:300px;width:400px" />
+                            </a>
+                            </br>
+                            @Html.ActionLink("Register", "Register", "Account", null, new { @class = "btn btn-primary btn-large" })
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <div class="form-line">
+                            <p>Here you can know Add Hospital building, rooms,ward etc..</p>
+                            <a href='@Url.Action("Index", "Building")'>
+                                <img src='@Url.Content("~/Images/Buildings/building.jpg")' style="height:300px;width:400px" />
+                            </a>
+
+                            </br>
+                            @Html.ActionLink("Building", "Dashboard", "Building", null, new { @class = "btn btn-primary btn-large" })
+
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            @*dept and ticket.......*@
+
+
+            <div class="row clearfix">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <div class="form-line">
+
+                            <p>Here you can Add Hospital all Departments.........</p>
+                            <a href='@Url.Action("Index", "Department")'>
+                                <img src='@Url.Content("~/Images/Departments/department.jpg")' style="height:300px;width:400px" />
+                            </a>
+                            </br>
+                            @Html.ActionLink("Department", "Index", "Department", null, new { @class = "btn btn-primary btn-large" })
+
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <div class="form-line">
+                            <p>Here you can Add Hospital  Departments.........</p>
+                            <a href='@Url.Action("Index", "TicketCounter")'>
+                                <img src='@Url.Content("~/Images/Departments/ticket.jpg")' style="height:300px;width:400px" />
+                            </a>
+                            </br>
+                            @Html.ActionLink("Ticket Counters", "Index", "TicketCounter", null, new { @class = "btn btn-primary btn-large" })
+
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
+
+
+            @*icu and lab*@
+
+
+            <div class="row clearfix">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <div class="form-line">
+
+                           
+                            <p>Here you can Add ICU.........</p>
+                            <a href='@Url.Action("Index", "ICU")'>
+                                <img src='@Url.Content("~/Images/Departments/icu.jpg")' style="height:300px;width:400px" />
+                            </a>
+
+
+
+                            </br>
+                            @Html.ActionLink("ICU", "Index", "ICU", null, new { @class = "btn btn-primary btn-large" })
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <div class="form-line">
+                            
+                            <p>Here you can Add Lab.........</p>
+                            <a href='@Url.Action("Index", "Lab")'>
+                                <img src='@Url.Content("~/Images/Departments/lab.jpg")' style="height:300px;width:400px" />
+                            </a>
+
+
+
+                            </br>
+                            @Html.ActionLink("Lab", "Index", "Lab", null, new { @class = "btn btn-primary btn-large" })
+
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            @*staff and doctor*@
+            <div class="row clearfix">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <div class="form-line">
+
+                            
+                            <p>Here you can Add staff.........</p>
+                            <a href='@Url.Action("Index", "Staff")'>
+                                <img src='@Url.Content("~/Images/Departments/staff.jpg")' style="height:300px;width:400px" />
+                            </a>
+                            </br>
+                            @Html.ActionLink("Staffs", "Index", "Staff", null, new { @class = "btn btn-primary btn-large" })
+
+
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <div class="form-line">
+                            
+                            <p>Here you can Add Doctor.........</p>
+                            <a href='@Url.Action("Index", "Doctor")'>
+                                <img src='@Url.Content("~/Images/Departments/doctor.jpg")' style="height:300px;width:400px" />
+                            </a>
+                            </br>
+                            @Html.ActionLink("Doctors", "Index", "Doctor", null, new { @class = "btn btn-primary btn-large" })
+
+                        </div>
+                    </div>
+                </div>
+                @Html.ActionLink("Admins", "List", "SuperAdmin", null, new { @class = "btn btn-primary btn-large" })
+              </div>           
+            </div>
+
         </div>
-    </section></div>
+    </section>
+
