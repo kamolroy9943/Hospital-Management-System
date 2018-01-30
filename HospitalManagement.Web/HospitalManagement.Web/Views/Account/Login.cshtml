@@ -23,7 +23,12 @@
                             {
                                 <h2>Your account has been blocked</h2>
                             }
-                        
+                            else if (ViewBag.BlockMsg == "Not")
+                            {
+                                <h2>Sorry You are Not Assingned to any perfect location</h2>
+                                <h2>So you cant Log in Please Contact to A Super Admin in Person</h2>
+                            }
+
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             <div class="form-group">
                                 @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })

@@ -210,6 +210,7 @@
     <Compile Include="Controllers\BuildingController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\FloorAdminController.cs" />
     <Compile Include="Controllers\FloorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ICUController.cs" />
@@ -380,6 +381,7 @@
     <Content Include="Views\Staff\Delete.cshtml" />
     <Content Include="Views\SuperAdmin\List.cshtml" />
     <Content Include="Views\SuperAdmin\Blocking.cshtml" />
+    <Content Include="Views\SuperAdmin\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -388,6 +390,7 @@
     <Folder Include="Images\Others\" />
     <Folder Include="Images\Patients\" />
     <Folder Include="Images\Staffs\" />
+    <Folder Include="Views\FloorAdmin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

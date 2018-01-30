@@ -82,7 +82,12 @@ namespace HospitalManagement.Controllers
                 ViewBag.BlockMsg = "Blocked";
                 return View(model);
             }
-
+             Check = _context.Admins.FirstOrDefault(x => x.Name == model.UserName).IsAssigned;
+            if (Check == "Not")
+            {
+                ViewBag.BlockMsg = "Not";
+                return View(model);
+            }
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
@@ -179,7 +184,8 @@ namespace HospitalManagement.Controllers
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
                     //................
                     AdminRole Admin = new AdminRole();
-                    Admin.Name = model.UserName;Admin.Role = model.UserRoles;Admin.IsBlocked = "Active";
+                    Admin.Name = model.UserName;Admin.Role = model.UserRoles;Admin.IsBlocked = "Active";Admin.IsAssigned = "Not";
+                    Admin.BuildingId = 0;Admin.PostId = 0;
                     Admin.Updated = DateTime.Today;Admin.UpdatedBy = User.Identity.Name;
                     _context.Admins.Add(Admin);_context.SaveChanges();
                     //Ends Here 

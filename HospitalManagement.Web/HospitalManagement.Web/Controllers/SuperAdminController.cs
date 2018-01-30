@@ -19,7 +19,11 @@ namespace Demo_Hospital.Controllers
 
             return View();
         }
-
+        public ActionResult Details(int id)
+        {
+            var model = _context.Admins.Find(id);
+            return View(model);
+        }
         public ActionResult List()
         {
             var model = _context.Admins.ToList();
@@ -52,6 +56,29 @@ namespace Demo_Hospital.Controllers
                 return View();
             }
         }
+
+        public ActionResult Assignning (int id)
+        {
+            List<Building> Buildings = _context.Building.ToList();
+            ViewBag.Buildinglist = new SelectList(Buildings, "Id", "BuildingName");
+
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult Assignning(int id,AdminRole collection)
+        {
+            try {
+
+                return View();
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
 
     }
 }
