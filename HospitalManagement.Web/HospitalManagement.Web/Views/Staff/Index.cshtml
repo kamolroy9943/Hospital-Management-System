@@ -11,9 +11,9 @@
             <p>
                 @Html.ActionLink("Add Staff", "Create")| | @Html.ActionLink("Staff Category", "Index", "StaffCategory") ||  @Html.ActionLink("Show Retired Staffs", "RetiredList", "Staff")
             </p>
-            <div class="form-group">
+            <div class="input-group">
                 <div class="col-md-10">
-                    @Html.DropDownList("Designation", ViewBag.CategoryList as SelectList, "--- Select Category--", new { @class = "form-control" })
+                    @Html.DropDownList("Designation", ViewBag.CategoryList as SelectList, "--- Select Category--", new { @class = "form-control",style= "height=50px;" })
                 </div>
             </div>
 

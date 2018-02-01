@@ -18,7 +18,7 @@
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     @Html.HiddenFor(model => model.Id)
 
-                    <div class="form-group">
+                    <div class="input-group">
                         @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
 
@@ -28,7 +28,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="input-group">
                         @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.DisplayFor(model => model.Role, new { htmlAttributes = new { @class = "form-control" } })
@@ -36,7 +36,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="input-group">
                         @Html.LabelFor(model => model.IsBlocked, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.DisplayFor(model => model.IsBlocked, new { htmlAttributes = new { @class = "form-control" } })
@@ -44,19 +44,19 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="input-group">
                         @Html.LabelFor(model => model.IsAssigned, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.DisplayFor(model => model.IsAssigned, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.IsAssigned, "", new { @class = "text-danger" })
                         </div>
                     </div>
-                    <div class="=form-group">
-                        @Html.DropDownListFor(model => model.BuildingId, ViewBag.Buildinglist as SelectList, "-- Select Building--", new { @class = "form-control" })
+                    <div class="input-group">
+                        @Html.DropDownListFor(model => model.BuildingId, ViewBag.Buildinglist as SelectList, "-- Select Building--", new { @class = "form-control" ,style= "height=40px;" })
                     </div>
 
-                    <div class="=form-group">
-                        @Html.DropDownListFor(model => model.PostId, new SelectList(" "), "-- Select Ticket Counter --", new { @class = "form-control" })
+                    <div class="input-group">
+                        @Html.DropDownListFor(model => model.PostId, new SelectList(" "), "-- Select Ticket Counter --", new { @class = "form-control", style = "height=40px;" })
                     </div>
                     @*<div class="form-group">
                             @Html.LabelFor(model => model.BuildingId, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -75,7 +75,7 @@
                         </div>*@
 
 
-                    <div class="form-group">
+                    <div class="input-group">
                         <div class="col-md-offset-2 col-md-10">
                             <input type="submit" value="Save" class="btn btn-default" />
                         </div>

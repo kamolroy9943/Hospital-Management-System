@@ -334,6 +334,7 @@
     <Content Include="Content\Chosen\chosen-sprite%402x.png" />
     <Content Include="Content\Chosen\chosen.min.css" />
     <Content Include="Content\dropzone.css" />
+    <Content Include="Content\fullcalendar.min.css" />
     <Content Include="Content\icon.css" />
     <Content Include="Content\jaman.css" />
     <Content Include="Content\main.css" />
@@ -374,9 +375,11 @@
     <Content Include="obj\Debug\HospitalManagement.Web.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\HospitalManagement.Web.csprojResolveAssemblyReference.cache" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\calendar.js" />
     <Content Include="Scripts\Chart.bundle.min.js" />
     <Content Include="Scripts\chosen.jquery.min.js" />
     <Content Include="Scripts\dropzone.js" />
+    <Content Include="Scripts\fullcalendarscripts.bundle.js" />
     <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
