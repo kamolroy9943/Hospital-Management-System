@@ -46,9 +46,12 @@ namespace HospitalManagement.Data
 
         public int SeatNumber { get; set; }
         public string Where { get; set; }
+        public int WhereId { get; set; }
 
         public DateTime Updated { get; set; }
         public string UpdatedBy { get; set; }
+
+        public string ImagePath { get; set; }
 
     }
 }
