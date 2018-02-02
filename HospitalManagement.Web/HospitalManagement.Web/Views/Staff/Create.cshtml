@@ -16,7 +16,7 @@
                     <h4>Staff</h4>
                     <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
+                    <div class="input-group">
                         @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
@@ -24,7 +24,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="input-group">
                         @Html.LabelFor(model => model.Contact, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.Contact, new { htmlAttributes = new { @class = "form-control" } })
@@ -32,7 +32,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="input-group">
                         @Html.LabelFor(model => model.ContactNo, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.ContactNo, new { htmlAttributes = new { @class = "form-control" } })
@@ -40,7 +40,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="input-group">
                         @Html.LabelFor(model => model.ContactEmail, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.ContactEmail, new { htmlAttributes = new { @class = "form-control" } })
@@ -48,7 +48,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="input-group">
                         @Html.LabelFor(model => model.Salary, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.Salary, new { htmlAttributes = new { @class = "form-control" } })
@@ -56,10 +56,10 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="input-group">
                         @Html.LabelFor(model => model.Designation, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.DropDownListFor(model => model.Designation, ViewBag.CategoryList as SelectList, "--- Select Category--", new { @class = "form-control" })
+                            @Html.DropDownListFor(model => model.Designation, ViewBag.CategoryList as SelectList, "--- Select Category--", new { @class = "form-control",style= "height=40px;" })
                             @*@Html.EditorFor(model => model.Designation, new { htmlAttributes = new { @class = "form-control" } })*@
                             @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })
                         </div>
@@ -81,7 +81,7 @@
                             </div>
                         </div>*@
 
-                    <div class="form-group">
+                    <div class="input-group">
                         @Html.LabelFor(model => model.IssuedBy, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.IssuedBy, new { htmlAttributes = new { @class = "form-control" } })
@@ -89,7 +89,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="input-group">
                         @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
 
@@ -99,7 +99,7 @@
                     </div>
 
 
-                    <div class="form-group">
+                    <div class="input-group">
                         <div class="col-md-offset-2 col-md-10">
                             <input type="submit" value="Create" class="btn btn-default" />
                         </div>

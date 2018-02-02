@@ -27,7 +27,7 @@
     <link href="@Url.Content("~/Contente/waitMe.css")" rel="stylesheet" />
     <!-- Bootstrap Select Css -->
     <link href="@Url.Content("~/Content/bootstrap-select.css")" rel="stylesheet" />
-
+    <link href="@Url.Content("~/Content/fullcalendar.min.css")" rel="stylesheet">
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -166,7 +166,7 @@
     <!-- Top Bar -->
     <nav class="navbar clearHeader">
         <div class="col-12">
-            <div class="navbar-header"> <a href="javascript:void(0);" class="bars"></a> <a class="navbar-brand" href="index.html">Swift Hospital</a> </div>
+            <div class="navbar-fixed-top"> <a href="javascript:void(0);" class="bars"></a> <a class="navbar-brand" href="@Url.Action("Index","Home")">Modern Hospital</a> </div>
             <ul class="nav navbar-nav navbar-right">
                 <!-- Notifications -->
                 <li class="dropdown">
@@ -323,13 +323,13 @@
                     <li class="header">MAIN NAVIGATION</li>
 
                     @*<li class="active open">
-            <a href="@Url.Action("Index","Home")" class="toggled waves-effect waves-block">
-                <i class="zmdi zmdi-home"></i>
+                            <a href="@Url.Action("Index","Home")" class="toggled waves-effect waves-block">
+                                <i class="zmdi zmdi-home"></i>
 
 
-                <span>Dashboard</span>
-            </a>
-        </li>*@
+                                <span>Dashboard</span>
+                            </a>
+                        </li>*@
 
                     <li class="active open">
                         <a href="javascript:void(0);" class="menu-toggle"><span class="glyphicon glyphicon-home"></span><span>Dashboard</span> </a>
@@ -645,8 +645,9 @@
 
     <div class="color-bg"></div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @*@Scripts.Render("~/bundles/bootstrap-luman")*@
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap-luman")*@
+
     @RenderSection("scripts", required: false)
     <!-- Jquery Core Js -->
     <script src="~/Scripts/"></script> <!-- Lib Scripts Plugin Js -->
@@ -660,6 +661,9 @@
     <script src="~/Scripts/morphingscripts.bundle.js"></script><!-- morphing search page js -->
     <script src="~/Scripts/index.js"></script>
     <script src="~/Scripts/sparkline.min.js"></script>
+   
+    <script src="~/Scripts/"></script><!--/ calender javascripts -->
+    <script src="~/Scripts/"></script>
 
 
 
@@ -673,7 +677,8 @@
     <!-- Bootstrap Material Datetime Picker Plugin Js -->
     <script src="~/Scripts/bootstrap-material-datetimepicker.js"></script>
     <script src="~/Scripts/basic-form-elements.js"></script>
-
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
 
 </body>
