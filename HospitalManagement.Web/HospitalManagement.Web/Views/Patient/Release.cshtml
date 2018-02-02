@@ -1,0 +1,173 @@
+﻿@model HospitalManagement.Data.Patient
+
+@{
+    ViewBag.Title = "Release";
+}
+<section class="content home">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Release</h2>
+
+            <h3>Are you sure you want to Release this Patient?</h3>
+            <div>
+                <h4>Patient</h4>
+                <img src=" @Url.Content(Model.ImagePath)" width="250" height="250" />
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Age)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Age)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Sex)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Sex)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.History)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.History)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Diagnosis)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Diagnosis)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DiagnosisBy)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DiagnosisBy)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AdmitDate)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.AdmitDate)
+                    </dd>
+
+                    @*<dt>
+                            @Html.DisplayNameFor(model => model.ReleaseDate)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ReleaseDate)
+                        </dd>*@
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.RefferedByDoctor)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.RefferedByDoctor)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AssingedDoctor)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.AssingedDoctor)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.MedicineHistory)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MedicineHistory)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.MedicineGivenBy)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MedicineGivenBy)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.SeatNumber)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SeatNumber)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Where)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Where)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.WhereId)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.WhereId)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Updated)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Updated)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UpdatedBy)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.UpdatedBy)
+                    </dd>
+
+                    @*<dt>
+                            @Html.DisplayNameFor(model => model.ImagePath)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ImagePath)
+                        </dd>*@
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Release This Patient" class="btn btn-default" /> |
+                        @*@Html.ActionLink("Back to List", "Index")*@
+                    </div>
+                }
+            </div>
+            </div></div></section>

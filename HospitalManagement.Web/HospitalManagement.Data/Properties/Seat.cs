@@ -25,8 +25,8 @@ namespace HospitalManagement.Data
         public int FloorNumber { get; set; }
         public Floor Floor { get; set; }
 
-        public string Where { get; set; } // Where is the Seat Is ? In Ward Or In a Room 
-        public int WhereID { get; set; } // For WardID or For Room Id
+        public string Where { get; set; } // Where is the Seat Is ? In Ward Or In a Room or in ICU ?
+        public int WhereID { get; set; } // For WardID or For Room Id or ICU ID
 
         public int HasbeenUsed { get; set; }
 
