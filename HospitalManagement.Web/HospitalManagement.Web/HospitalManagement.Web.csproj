@@ -210,6 +210,7 @@
     <Compile Include="Controllers\BuildingController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\DoctorScheduleController.cs" />
     <Compile Include="Controllers\FloorAdminController.cs" />
     <Compile Include="Controllers\FloorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -529,6 +530,9 @@
     <Content Include="Views\Patient\CreateInWard.cshtml" />
     <Content Include="Views\Patient\Details.cshtml" />
     <Content Include="Views\Patient\Release.cshtml" />
+    <Content Include="Views\DoctorSchedule\Index.cshtml" />
+    <Content Include="Views\DoctorSchedule\Details.cshtml" />
+    <Content Include="Views\DoctorSchedule\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

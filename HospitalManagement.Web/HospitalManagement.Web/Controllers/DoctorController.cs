@@ -79,6 +79,18 @@ namespace HospitalManagement.Web.Controllers
 
                 _context.Doctors.Add(collection);
                 _context.SaveChanges();
+                
+                // Now
+                //Here I am inserting in Docotors schedule Table 
+                // At first Schedule will Not added
+                //
+                DoctorSchedule Schedule = new DoctorSchedule();
+                int DoctorId = _context.Doctors.Where(x => x.DoctorName == collection.DoctorName).FirstOrDefault(y => y.JoinningDate == collection.JoinningDate).Id;
+                Schedule.DoctorId = DoctorId;
+                Schedule.DoctorName = collection.DoctorName;
+                Schedule.Schedule = "Not yet Added";
+                Schedule.Updated = DateTime.Today;Schedule.UpdatedBy = User.Identity.Name;
+                _context.DoctorsSchedule.Add(Schedule);_context.SaveChanges();
 
                 return RedirectToAction("Index");
             }
@@ -191,6 +203,11 @@ namespace HospitalManagement.Web.Controllers
                 model.RetireDate = DateTime.Today;
 
                 _context.Entry(model).State = System.Data.Entity.EntityState.Modified;
+                _context.SaveChanges();
+
+
+                DoctorSchedule schedule = _context.DoctorsSchedule.FirstOrDefault(x => x.DoctorId == model.Id);
+                _context.DoctorsSchedule.Remove(schedule);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }

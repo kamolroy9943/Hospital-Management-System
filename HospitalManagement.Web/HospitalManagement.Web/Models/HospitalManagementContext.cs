@@ -25,6 +25,7 @@ namespace HospitalManagement.Web.Models
         public DbSet<Staff_Category> StaffCategory { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<DoctorSchedule> DoctorsSchedule { get; set; }
         public DbSet<Patient> Patients { get; set; }
 
 
