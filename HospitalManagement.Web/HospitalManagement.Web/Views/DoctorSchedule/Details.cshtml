@@ -1,0 +1,61 @@
+﻿@model HospitalManagement.Data.DoctorSchedule
+
+@{
+    ViewBag.Title = "Details";
+}
+<section class="content home">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Details</h2>
+
+            <div>
+                <h4>DoctorSchedule</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Doctor.DoctorName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Doctor.DoctorName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DoctorName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DoctorName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Schedule)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Schedule)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Updated)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Updated)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UpdatedBy)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.UpdatedBy)
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+            </div></div></section>
