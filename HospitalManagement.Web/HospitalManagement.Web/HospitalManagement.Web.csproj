@@ -227,6 +227,7 @@
     <Compile Include="Controllers\SuperAdminController.cs" />
     <Compile Include="Controllers\TicketAdminController.cs" />
     <Compile Include="Controllers\TicketCounterController.cs" />
+    <Compile Include="Controllers\TreatmentController.cs" />
     <Compile Include="Controllers\usersController.cs" />
     <Compile Include="Controllers\WardController.cs" />
     <Compile Include="Global.asax.cs">
@@ -533,6 +534,9 @@
     <Content Include="Views\DoctorSchedule\Index.cshtml" />
     <Content Include="Views\DoctorSchedule\Details.cshtml" />
     <Content Include="Views\DoctorSchedule\Edit.cshtml" />
+    <Content Include="Views\Treatment\Index.cshtml" />
+    <Content Include="Views\Treatment\Create.cshtml" />
+    <Content Include="Views\Treatment\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
