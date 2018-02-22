@@ -28,6 +28,7 @@ namespace HospitalManagement.Web.Models
         public DbSet<DoctorSchedule> DoctorsSchedule { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Treatment> Treatment { get; set; }
+        public DbSet<LabReport> LabReport { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -53,6 +54,6 @@ namespace HospitalManagement.Web.Models
 
         }
 
-
+      
     }
 }

@@ -333,8 +333,6 @@
     <Content Include="Content\bootstrap-select.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Chosen\chosen-sprite%402x.png" />
-    <Content Include="Content\Chosen\chosen.min.css" />
     <Content Include="Content\dropzone.css" />
     <Content Include="Content\fullcalendar.min.css" />
     <Content Include="Content\icon.css" />
@@ -379,7 +377,6 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\calendar.js" />
     <Content Include="Scripts\Chart.bundle.min.js" />
-    <Content Include="Scripts\chosen.jquery.min.js" />
     <Content Include="Scripts\dropzone.js" />
     <Content Include="Scripts\fullcalendarscripts.bundle.js" />
     <Content Include="Scripts\index.js" />
@@ -537,9 +534,12 @@
     <Content Include="Views\Treatment\Index.cshtml" />
     <Content Include="Views\Treatment\Create.cshtml" />
     <Content Include="Views\Treatment\Edit.cshtml" />
+    <Content Include="Views\LabAdmin\Index.cshtml" />
+    <Content Include="Views\LabAdmin\CreateReport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Chosen\" />
     <Folder Include="Images\Doctors\" />
     <Folder Include="Images\Others\" />
     <Folder Include="Images\Patients\" />

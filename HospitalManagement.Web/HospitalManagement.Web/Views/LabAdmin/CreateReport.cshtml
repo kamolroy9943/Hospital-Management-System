@@ -1,0 +1,105 @@
+﻿@model HospitalManagement.Data.LabReport
+
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<!DOCTYPE html>
+
+            <head>
+                <meta name="viewport" content="width=device-width" />
+                <title>CreateReport</title>
+            </head>
+            <body>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        <h4>LabReport</h4>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.PatientID)
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PatientName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(model => model.PatientName, ViewBag.Patientlist as SelectList, "-- Select Patient --", new { @class = "form-control" })
+                                @*@Html.EditorFor(model => model.PatientName, new { htmlAttributes = new { @class = "form-control" } })*@
+                                @Html.ValidationMessageFor(model => model.PatientName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.TestName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.TestName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.TestName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Deatils, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Deatils, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Deatils, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Bill, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Bill, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Bill, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AuthorisedDoctor, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(model => model.AuthorisedDoctor, ViewBag.Doctorlist as SelectList, "-- Select Docotor --", new { @class = "form-control" })
+                                @*@Html.EditorFor(model => model.AuthorisedDoctor, new { htmlAttributes = new { @class = "form-control" } })*@
+                                @Html.ValidationMessageFor(model => model.AuthorisedDoctor, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        @{
+                            if (ViewBag.Status == "Not")
+                            {
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Create" class="btn btn-default" />
+                                    </div>
+                                </div>
+
+                            }
+                            else if (ViewBag.Status == "Yes")
+                            {
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="button" value="Print" onclick="window.print();" />
+                                    </div>
+                                </div>
+                            
+                            }
+
+                        }
+
+                        </div>
+                }
+
+                
+            </body>
+        </html>
+@*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+@section scripts
+{
+    <script>
+        $(function () {
+            $("#BPrint").click(function () {
+                window.print();
+            });
+        });
+    </script>
+}*@

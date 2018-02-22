@@ -51,7 +51,7 @@
     <Compile Include="Properties\Department.cs" />
     <Compile Include="Properties\Doctor.cs" />
     <Compile Include="Properties\Floor.cs" />
-    <Compile Include="Properties\Lab-Report.cs" />
+    <Compile Include="Properties\LabReport.cs" />
     <Compile Include="Properties\Lab.cs" />
     <Compile Include="Properties\Patient.cs" />
     <Compile Include="Properties\Room.cs" />
