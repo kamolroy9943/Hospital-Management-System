@@ -161,8 +161,8 @@ namespace Demo_Hospital.Controllers
                 Admin.BuildingId = collection.BuildingId;
                 Admin.PostId = collection.PostId;
                 string BuildingName = _context.Building.FirstOrDefault(x => x.Id == collection.BuildingId).BuildingName;
-                int CounterNumber = _context.TicketCounter.FirstOrDefault(x => x.Id == collection.PostId).Number;
-                Admin.IsAssigned = BuildingName + "( " + CounterNumber.ToString() + " )";
+                string LabName = _context.Labs.FirstOrDefault(x => x.Id == collection.PostId).Name;
+                Admin.IsAssigned = BuildingName + "( " + LabName + " )";
                 Admin.Updated = DateTime.Today;
                 Admin.UpdatedBy = User.Identity.Name;
 

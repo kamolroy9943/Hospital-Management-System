@@ -285,7 +285,8 @@ namespace HospitalManagement.Web.Controllers
 
         public ActionResult Treatment(int id)
         {
-            return View();
+
+            return RedirectToAction("Index", "Treatment", new { id = id });
 
         }
     }

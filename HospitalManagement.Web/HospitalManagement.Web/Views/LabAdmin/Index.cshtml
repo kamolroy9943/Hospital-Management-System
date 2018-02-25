@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<section class="content home">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Lab Admin Index</h2>
+
+            @Html.ActionLink("Create a New Report", "CreateReport", "LabAdmin", new { target = "_blank", @class = "btn btn-primary btn-large" })
+            @Html.ActionLink("Created Reports", "Reportlist", "LabAdmin", null, new { @class = "btn btn-primary btn-large" })
+            </div></div></section>

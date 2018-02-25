@@ -1,0 +1,71 @@
+﻿@model HospitalManagement.Data.LabReport
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>LabReport</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PatientName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PatientName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TestName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TestName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Deatils)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Deatils)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Bill)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Bill)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AuthorisedDoctor)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AuthorisedDoctor)
+            </dd>
+    
+            
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        <input type="button" value="Print" onclick="window.print();" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

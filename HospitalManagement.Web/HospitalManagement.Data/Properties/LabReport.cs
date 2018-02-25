@@ -7,24 +7,28 @@ using System.Threading.Tasks;
 
 namespace HospitalManagement.Data
 {
-     public class Treatment
+   public class LabReport
     {
         [Key]
         public int Id { get; set; }
 
         public int PatientId { get; set; }
         public string PatientName { get; set; }
-        public Patient Patient { get; set; }
+       public Patient Patient { get; set; }
+        public string TestName { get; set; }
+        [Required]
+        public  string Deatils { get; set; }
+        [Required]
+        
 
-        public string Doctors_Checked { get; set; }
-        public string Medicine { get; set; }
+        public int Bill { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [DataType(DataType.Date)]
-        public DateTime Date { get; set; }
-       
+        [Required]
+        public string AuthorisedDoctor { get; set; }
 
         public DateTime Updated { get; set; }
         public string UpdatedBy { get; set; }
+        
+
     }
 }
