@@ -536,6 +536,9 @@
     <Content Include="Views\Treatment\Edit.cshtml" />
     <Content Include="Views\LabAdmin\Index.cshtml" />
     <Content Include="Views\LabAdmin\CreateReport.cshtml" />
+    <Content Include="Views\LabAdmin\Reportlist.cshtml" />
+    <Content Include="Views\LabAdmin\Edit.cshtml" />
+    <Content Include="Views\LabAdmin\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

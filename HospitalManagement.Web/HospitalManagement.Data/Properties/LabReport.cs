@@ -12,7 +12,7 @@ namespace HospitalManagement.Data
         [Key]
         public int Id { get; set; }
 
-        public int PatientID { get; set; }
+        public int PatientId { get; set; }
         public string PatientName { get; set; }
        public Patient Patient { get; set; }
         public string TestName { get; set; }

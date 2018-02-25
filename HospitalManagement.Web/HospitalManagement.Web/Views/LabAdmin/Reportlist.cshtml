@@ -1,0 +1,61 @@
+﻿@model IEnumerable<HospitalManagement.Data.LabReport>
+
+@{
+    ViewBag.Title = "Reportlist";
+}
+<section class="content home">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Reportlist</h2>
+
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
+                <tr>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.PatientName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TestName)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Bill)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AuthorisedDoctor)
+                    </th>
+
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PatientName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TestName)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Bill)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AuthorisedDoctor)
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Show", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Print", "Print", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+            </div></div></section>

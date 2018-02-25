@@ -10,20 +10,20 @@ namespace HospitalManagement.Web.Controllers
 {
     public class FloorAdminController : Controller
     {
-        HospitalManagementContext _contex = new HospitalManagementContext();
+        HospitalManagementContext _context = new HospitalManagementContext();
         
         // GET: FloorAdmin
         public ActionResult Index()
         {
             string AdminUserName = User.Identity.Name;
-            int FloorId = _contex.Admins.FirstOrDefault(x => x.Name == AdminUserName).PostId;
+            int FloorId = _context.Admins.FirstOrDefault(x => x.Name == AdminUserName).PostId;
 
-            ViewBag.Rooms = _contex.Rooms.Count(x => x.FloorId == FloorId);
-            ViewBag.Wards = _contex.Wards.Count(x => x.FloorId == FloorId);
-            ViewBag.ICU = _contex.Icu.Count(x => x.FloorId == FloorId);
-            ViewBag.Seats = _contex.Seats.Count(x => x.FloorId == FloorId);
+            ViewBag.Rooms = _context.Rooms.Count(x => x.FloorId == FloorId);
+            ViewBag.Wards = _context.Wards.Count(x => x.FloorId == FloorId);
+            ViewBag.ICU = _context.Icu.Count(x => x.FloorId == FloorId);
+            ViewBag.Seats = _context.Seats.Count(x => x.FloorId == FloorId);
 
-            var Seat = _contex.Seats.Where(x => x.FloorId == FloorId).ToList();
+            var Seat = _context.Seats.Where(x => x.FloorId == FloorId).ToList();
             ViewBag.EmptySeat = Seat.Count(x => x.IsEmpty != "Empty");
 
             return View();

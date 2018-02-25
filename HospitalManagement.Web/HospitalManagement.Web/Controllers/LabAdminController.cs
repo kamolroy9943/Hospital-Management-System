@@ -10,26 +10,37 @@ namespace Demo_Hospital.Controllers
 {
     public class LabAdminController : Controller
     {
-        HospitalManagementContext _contex = new HospitalManagementContext();
+        HospitalManagementContext _context = new HospitalManagementContext();
         // GET: LabAdmin
         public ActionResult Index()
         {
             string AdminName = User.Identity.Name;
-            int LabId = _contex.Admins.FirstOrDefault(x => x.Name == AdminName).PostId;
+            int LabId = _context.Admins.FirstOrDefault(x => x.Name == AdminName).PostId;
 
             ViewBag.LabId = LabId;
 
             return View();
         }
 
+        public ActionResult Reportlist()
+        {
+            var list = _context.LabReport.ToList();
+            return View(list);
+        }
+
+        public ActionResult Details(int id)
+        {
+            return View(_context.LabReport.Find(id));
+        }
+
         //Get 
         public ActionResult CreateReport()
         {
-            List<Patient> Patients = _contex.Patients.ToList();
+            List<Patient> Patients = _context.Patients.ToList();
             ViewBag.Patientlist = new SelectList(Patients, "Id", "Name");
 
-            List<Doctor> Doctors = _contex.Doctors.ToList();
-            ViewBag.Doctorlist = new SelectList(Doctors, "Id", "DoctorName");
+            List<Doctor> Doctors = _context.Doctors.ToList();
+            ViewBag.Doctorlist = new SelectList(Doctors, "DoctorName", "DoctorName");
 
             ViewBag.Status = "Not";
             return View();
@@ -40,14 +51,20 @@ namespace Demo_Hospital.Controllers
         [HttpPost]
         public ActionResult CreateReport(LabReport collection)
         {
+            List<Patient> Patients = _context.Patients.ToList();
+            ViewBag.Patientlist = new SelectList(Patients, "Id", "Name");
+
+            List<Doctor> Doctors = _context.Doctors.ToList();
+            ViewBag.Doctorlist = new SelectList(Doctors, "DoctorName", "DoctorName");
             collection.Updated = DateTime.Now;
             collection.UpdatedBy = User.Identity.Name;
             try
             {
                 // Will be deleated
-                collection.PatientName = _contex.Patients.FirstOrDefault(x => x.Id == collection.PatientID).Name;
-                _contex.LabReport.Add(collection);
-                _contex.SaveChanges();
+                
+                collection.PatientName = _context.Patients.FirstOrDefault(x => x.Id == collection.PatientId).Name;
+                _context.LabReport.Add(collection);
+                _context.SaveChanges();
                 ViewBag.Status = "Yes";
                 return View(collection);
         }
@@ -61,15 +78,31 @@ namespace Demo_Hospital.Controllers
 
         public ActionResult Edit (int id)
         {
+            List<Patient> Patients = _context.Patients.ToList();
+            ViewBag.Patientlist = new SelectList(Patients, "Id", "Name");
 
-            return View();
+            List<Doctor> Doctors = _context.Doctors.ToList();
+            ViewBag.Doctorlist = new SelectList(Doctors, "DoctorName", "DoctorName");
+            LabReport labReport = _context.LabReport.Find(id);
+            return View(labReport);
         }
 
         [HttpPost]
         public ActionResult Edit(int id,LabReport collection)
         {
+            try
+            {
+                collection.Updated = DateTime.Now;
+                collection.UpdatedBy = User.Identity.Name;
+                
+                collection.PatientName = _context.Patients.FirstOrDefault(x => x.Id == collection.PatientId).Name;
 
-            return View();
+                _context.Entry(collection).State = System.Data.Entity.EntityState.Modified;
+                _context.SaveChanges();
+                
+                return RedirectToAction("Reportlist");
+            }
+            catch { return View(); }
         }
 
 
