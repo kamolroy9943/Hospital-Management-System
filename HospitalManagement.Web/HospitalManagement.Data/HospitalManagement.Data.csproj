@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Payment.cs" />
+    <Compile Include="Properties\Bill.cs" />
     <Compile Include="Properties\DoctorSchedule.cs" />
     <Compile Include="Properties\AdminRole.cs" />
     <Compile Include="Properties\ICU.cs" />

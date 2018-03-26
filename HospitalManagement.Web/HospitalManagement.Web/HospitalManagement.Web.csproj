@@ -207,6 +207,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BillAdminController.cs" />
     <Compile Include="Controllers\BuildingController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
@@ -233,6 +234,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803260236158_FirstOne.cs" />
+    <Compile Include="Migrations\201803260236158_FirstOne.Designer.cs">
+      <DependentUpon>201803260236158_FirstOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HospitalManagementContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -547,6 +553,7 @@
     <Folder Include="Images\Others\" />
     <Folder Include="Images\Patients\" />
     <Folder Include="Images\Staffs\" />
+    <Folder Include="Views\BillAdmin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -561,6 +568,11 @@
       <Project>{e890f13c-b539-4ee9-9c26-c83766d8068d}</Project>
       <Name>HospitalManagement.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803260236158_FirstOne.resx">
+      <DependentUpon>201803260236158_FirstOne.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
