@@ -66,6 +66,16 @@ namespace Demo_Hospital.Controllers
                 _context.LabReport.Add(collection);
                 _context.SaveChanges();
                 ViewBag.Status = "Yes";
+
+                Bill bill = new Bill();
+                bill.WhatFor = "Lab test :  " + collection.TestName;
+                bill.Description = collection.Deatils;
+                bill.PatientId = collection.PatientId;
+                bill.PatientName = collection.PatientName;
+                bill.Amount = collection.Bill;
+                bill.Updated = DateTime.Now;
+                bill.UpdatedBy = User.Identity.Name;
+                _context.Bill.Add(bill);_context.SaveChanges();
                 return View(collection);
         }
             catch

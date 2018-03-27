@@ -6,41 +6,41 @@
     <div class="container-fluid">
         <div class="block-header">
             <h2>Floor Admin Index</h2>
-              @{ 
-                  if(ViewBag.EmptySeat>0)
-                  {
-                      <h4>There are ViewBag.EmptySeat Empty Seats in this Floor</h4>
-                  }
-                  else
-                  {
-                      <h4>There are no Seats in this Floor , Please Reffer to another Floor</h4>
-                  }
-              }
+            @{
+        if (ViewBag.EmptySeat > 0)
+        {
+            <h4>There are @ViewBag.EmptySeat Empty Seats in this Floor</h4>
+}
+else
+{
+        <h4>There are no Seats in this Floor , Please Reffer to another Floor</h4>
+}
+            }
 
-           @{ 
-               if(ViewBag.Rooms>0)
-               {
-                     @Html.ActionLink("Add Patients In a Room", "CreateInRoom", "Patient", null, new { @class = "btn btn-primary btn-large" })
-                   @Html.ActionLink("See All Patients of Rooms", "AllPatientIndex", "Patient",new { Where = "Room" }, new { @class = "btn btn-primary btn-large" })
-                  
-                   
-               }
-               if (ViewBag.Wards > 0)
-               {
-                @Html.ActionLink("Add Patients In a Ward", "CreateInWard", "Patient", null, new { @class = "btn btn-primary btn-large" })
-                @Html.ActionLink("See All Patients of Wards", "AllPatientIndex", "Patient", new { Where = "Ward" }, new { @class = "btn btn-primary btn-large" })
-               
-               }
-               if (ViewBag.ICU > 0)
-               {
-                @Html.ActionLink("Add Patients In ICU", "CreateInICU", "Patient", null, new { @class = "btn btn-primary btn-large" })
-                @Html.ActionLink("See All Patients of ICU", "AllPatientIndex", "Patient", new { Where="ICU"}, new {  @class = "btn btn-primary btn-large" })
-                
-               }
+            @{
+        if (ViewBag.Rooms > 0)
+        {
+            @Html.ActionLink("Add Patients In a Room", "CreateInRoom", "Patient", null, new { @class = "btn btn-primary btn-large" })
+            @Html.ActionLink("See All Patients of Rooms", "AllPatientIndex", "Patient", new { Where = "Room" }, new { @class = "btn btn-primary btn-large" })
 
 
-        }
+}
+if (ViewBag.Wards > 0)
+{
+        @Html.ActionLink("Add Patients In a Ward", "CreateInWard", "Patient", null, new { @class = "btn btn-primary btn-large" })
+        @Html.ActionLink("See All Patients of Wards", "AllPatientIndex", "Patient", new { Where = "Ward" }, new { @class = "btn btn-primary btn-large" })
+
+}
+if (ViewBag.ICU > 0)
+{
+        @Html.ActionLink("Add Patients In ICU", "CreateInICU", "Patient", null, new { @class = "btn btn-primary btn-large" })
+        @Html.ActionLink("See All Patients of ICU", "AllPatientIndex", "Patient", new { Where = "ICU" }, new { @class = "btn btn-primary btn-large" })
+
+}
 
 
+            }
 
-            </div></div></section>
+            @Html.ActionLink("Create Bill for a Patient", "CreateBill", null, new { @class = "btn btn-primary btn-large" })
+
+        </div></div></section>

@@ -36,19 +36,26 @@ namespace HospitalManagement.Web.Controllers
         }
 
         // GET: FloorAdmin/Create
-        public ActionResult Create()
+        public ActionResult CreateBill()
         {
+            List<Patient> Patients = _context.Patients.ToList();
+            ViewBag.Patientslist = new SelectList(Patients, "Id", "Name");
+
             return View();
         }
 
         // POST: FloorAdmin/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult CreateBill(Bill collection)
         {
             try
             {
-                // TODO: Add insert logic here
+                collection.PatientName = _context.Patients.FirstOrDefault(x => x.Id == collection.PatientId).Name;
+                collection.Updated = DateTime.Now;
+                collection.UpdatedBy = User.Identity.Name;
 
+                _context.Bill.Add(collection);
+                _context.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch

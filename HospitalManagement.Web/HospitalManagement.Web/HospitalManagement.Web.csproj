@@ -238,6 +238,10 @@
     <Compile Include="Migrations\201803260236158_FirstOne.Designer.cs">
       <DependentUpon>201803260236158_FirstOne.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803271634019_FirstTwo.cs" />
+    <Compile Include="Migrations\201803271634019_FirstTwo.Designer.cs">
+      <DependentUpon>201803271634019_FirstTwo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HospitalManagementContext.cs" />
@@ -545,6 +549,7 @@
     <Content Include="Views\LabAdmin\Reportlist.cshtml" />
     <Content Include="Views\LabAdmin\Edit.cshtml" />
     <Content Include="Views\LabAdmin\Details.cshtml" />
+    <Content Include="Views\FloorAdmin\CreateBill.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -572,6 +577,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803260236158_FirstOne.resx">
       <DependentUpon>201803260236158_FirstOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803271634019_FirstTwo.resx">
+      <DependentUpon>201803271634019_FirstTwo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

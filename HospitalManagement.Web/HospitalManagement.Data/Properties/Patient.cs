@@ -53,5 +53,8 @@ namespace HospitalManagement.Data
 
         public string ImagePath { get; set; }
 
+        public ICollection<Bill> Bills { get; set; }
+        public ICollection<Payment> Payments { get; set; }
+
     }
 }

@@ -29,6 +29,8 @@ namespace HospitalManagement.Web.Models
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Treatment> Treatment { get; set; }
         public DbSet<LabReport> LabReport { get; set; }
+        public DbSet<Bill> Bill { get; set; }
+        public DbSet<Payment> Payment { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -50,6 +52,8 @@ namespace HospitalManagement.Web.Models
 
             modelBuilder.Entity<Department>().HasMany(x => x.Tickets).WithRequired(f => f.Department).WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Patient>().HasMany(x => x.Bills).WithRequired(f => f.Patient).WillCascadeOnDelete(false);
+            modelBuilder.Entity<Patient>().HasMany(x => x.Payments).WithRequired(f => f.Patient).WillCascadeOnDelete(false);
             base.OnModelCreating(modelBuilder);
 
         }
